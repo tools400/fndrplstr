@@ -1,0 +1,248 @@
+000100170213.*=====================================================================*
+000200170213.*                                                                     *
+000300170213.*  Kurzdokumentation :                                                *
+000400170213.*                                                                     *
+000500170213.*  Bereich . . . : FNDRPLSTR                                          *
+000600170213.*  Objekt  . . . : FNDRPLSTRP                                         *
+000700170213.*  Beschreibung  : Find and Replace Strings - Eng                     *
+000800170213.*  Author  . . . : Thomas Raddatz   <thomas.raddatz@tools400.de>      *
+000900170213.*  Datum . . . . : 20.01.2004                                         *
+001000170213.*                                                                     *
+001100170213.*=====================================================================*
+001200170213.*                                                                     *
+001300170213.*  This software is free software, you can redistribute it and/or     *
+001400170213.*  modify it under the terms of the GNU General Public License (GPL)  *
+001500170213.*  as published by the Free Software Foundation.                      *
+001600170213.*                                                                     *
+001700170213.*  See GNU General Public License for details.                        *
+001800170213.*          http://www.opensource.org                                  *
+001900170213.*          http://www.opensource.org/licenses/gpl-license.html        *
+002000170213.*                                                                     *
+002100170213.*=====================================================================*
+002200170213.*  History:                                                           *
+002300170213.*                                                                     *
+002400170213.*  Datum       Name          Änderung                                 *
+002500170213.*  ----------  ------------  ---------------------------------------  *
+002600170213.*                                                                     *
+002700170213.*=====================================================================*
+002800170213.* >>PRE-COMPILER<<                                                    *
+002900170213.*                                                                     *
+003000170213.*   >>CRTCMD<< CRTPNLGRP    PNLGRP(&LI/FNDRPLSTRP) +                  *
+003100170213.*                           SRCFILE(&SL/&SF) +                        *
+003200170213.*                           SRCMBR(&SM);                              *
+003300170213.*                                                                     *
+003400170213.*   >>COMPILE<<                                                       *
+003500170213.*   >>END-COMPILE<<                                                   *
+003600170213.*                                                                     *
+003700170213.*   >>EXECUTE<<                                                       *
+003800170213.*                                                                     *
+003900170213.* >>END-PRE-COMPILER<<                                                *
+004000170213.*=====================================================================*
+004100170213:PNLGRP.
+004200170213.*
+004300170213:HELP name='FNDRPLSTR/ALL'.
+004400170213:IMHELP name=FNDRPLSTR.
+004500170213:IMHELP name='FNDRPLSTR/FILE      '.
+004600170213:IMHELP name='FNDRPLSTR/MBR       '.
+004700170213:IMHELP name='FNDRPLSTR/VALUES    '.
+004800170213:IMHELP name='FNDRPLSTR/CASE      '.
+004900170213:IMHELP name='FNDRPLSTR/WILDCARD  '.
+005000170213:EHELP.
+005100170213.*--------------------------------------------------------------------
+005200170213.* Hilfetext für den Befehl
+005300170213.*--------------------------------------------------------------------
+005400170213:HELP NAME='FNDRPLSTR'.
+005500170213Find and replace string (FNDRPLSTR) - Help
+005600170213:P.
+005700170213The FNDRPLSTR command allows you to search for character or hexadecimal
+005800170213strings in physical file members. If a string is found, it
+005900170213can be replace by a new value.
+006000170213.*
+006100170213:EHELP.
+006200170213.*
+006300170213.*--------------------------------------------------------------------
+006400170213.* Hilfetext für Schlüsselwort FILE
+006500170213.*--------------------------------------------------------------------
+006600170213:HELP name='FNDRPLSTR/FILE      '.
+006700170213File - Help
+006800170213:XH3.File (FILE)
+006900170213:P.
+007000170213Type the name of the file (in the form LIBRARY/FILE) that
+007100170213contains the member you want to search.
+007200170213.*
+007300170213:IMHELP name='COM/REQPARM'.
+007400170213.*
+007500170213:PARML.
+007600170213:PT.:PV.File name:EPV.
+007700170213:PD.Type the name of the file that contains the members
+007800170213you want to search.
+007900170213:P.
+008000170213The possible library values are:
+008100170213:P.
+008200170213:PT.:PK DEF.*LIBL:EPK.
+008300170213:PD.Type *LIBL to search the library list for the file.
+008400170213:PT.:PV.Library name:EPV.
+008500170213:PD.Type a specific library name to search that library
+008600170213for the file.
+008700170213:EPARML.
+008800170213.*
+008900170213:EHELP.
+009000170213.*
+009100170213.*--------------------------------------------------------------------
+009200170213.* Hilfetext für Schlüsselwort MBR
+009300170213.*--------------------------------------------------------------------
+009400170213:HELP name='FNDRPLSTR/MBR'.
+009500170213Member - Help
+009600170213:XH3.Member (MBR)
+009700170213:P.
+009800170213Specifies the name of the member of the file
+009900170213you want to search.
+010000170213.*
+010100170213:IMHELP name='COM/REQPARM'.
+010200170213.*
+010300170213:PARML.
+010400170213:PT.:PV.*FIRST:EPV.
+010500170213:PD.Type *FIRST to search the first member of the file.
+010600170213:PT.:PV.*ALL:EPV.
+010700170213:PD.Type *ALL to search all the members in the file.
+010800170213:PT.:PV.File-member-name:EPV.
+010900170213:PD.Enter the name of the member you want to search.
+011000170213:EPARML.
+011100170213.*
+011200170213:EHELP.
+011300170213.*
+011400170213.*--------------------------------------------------------------------
+011500170213.* Hilfetext für Schlüsselwort VALUES
+011600170213.*--------------------------------------------------------------------
+011700170213:HELP name='FNDRPLSTR/VALUES'.
+011800170213Search and replace - Help
+011900170213:XH3.Search and replace (VALUES)
+012000170213:P.
+012100170213Specify the argument you want to search for. The second value
+012200170213specifies the replacement string.
+012300170213:P.
+012400170213Use quotes to specify empty strings or strings with preceding or
+012500170213trailing spaces.
+012600170213:P.
+012700170213Specify hexadecimal values as x'..', e.g. x'A3'.
+012800170213:P.
+012900170213:HP2.Search argument.:EHP2. Type the string you want to search
+013000170213for, enclosed in single quotation marks. The string can be character
+013100170213or hexadecimal.
+013200170213:P.
+013300170213:HP2.Replacement string.:EHP2. Type the string you want to use to
+013400170213replace the search argument, enclosed in single quotation marks. The
+013500170213string can be character or hexadecimal.
+013600170213:P.
+013700170213:HP1.Sample 1:EHP1.
+013800170213:P.
+013900170213This sample shows how to replace "Hello" with "World".
+014000170213:P.
+014100170213:LINES.
+014200170213FNDRPLSTR FILE(*LIBL/QSRC)
+014300170213   MBR(TEST_SRCM) VALUES(('Hello' 'World'))
+014400170213:ELINES.
+014500170213:P.
+014600170213:HP1.Sample 2:EHP1.
+014700170213:P.
+014800170213This sample shows how to replace "Hello  " (with trailing spaces)
+014900170213with "World". Notice the different lengths of both strings that
+015000170213will shift other characters 2 bytes to the left side.
+015100170213:P.
+015200170213:LINES.
+015300170213FNDRPLSTR FILE(*LIBL/QSRC)
+015400170213   MBR(TEST_SRCM) VALUES(('Hello  ' 'World'))
+015500170213:ELINES.
+015600170213.*
+015700170213:EHELP.
+015800170213.*
+015900170213.*--------------------------------------------------------------------
+016000170213.* Hilfetext für Schlüsselwort CASE
+016100170213.*--------------------------------------------------------------------
+016200170213:HELP name='FNDRPLSTR/CASE'.
+016300170213Kind of match - Help
+016400170213:XH3.Kind of match (CASE)
+016500170213:P.
+016600170213Specify how characters must match.
+016700170213.*
+016800170213:IMHELP name='COM/OPTPARM'.
+016900170213.*
+017000170213:PARML.
+017100170213:PT.:PK DEF.*IGNORE:EPK.
+017200170213:PD.Type *IGNORE to search the member for the string
+017300170213without case sensitivity.
+017400170213:PT.:PV.*MATCH:EPV.
+017500170213:PD.Type *MATCH to search for an exact match to the
+017600170213string.
+017700170213:EPARML.
+017800170213.*
+017900170213:EHELP.
+018000170213.*
+018100170213.*--------------------------------------------------------------------
+018200170213.* Hilfetext für Schlüsselwort WILDCARD
+018300170213.*--------------------------------------------------------------------
+018400170213:HELP name='FNDRPLSTR/WILDCARD'.
+018500170213Wildcard character - Hilfe
+018600170213:XH3.Wildcard character (WILDCARD)
+018700170213:P.
+018800170213Specifies the character that is used as the wildcard character when
+018900170213searching for and replacing string.
+019000170213:P.
+019100170213The wildcard character is used to substitute any character in the search
+019200170213argument when comparing string. For example when searching for
+019300170213:HP2.?oat:EHP2. :HP2.boat:EHP2. is found but also also :HP2.coat:EHP2.
+019400170213and :HP2.goat:EHP2..
+019500170213:P.
+019600170213When used in the replacement string the wildcard character is used
+019700170213to preserve characters of the source string. If for example
+019800170213:HP2.UTF-8:EHP2. shall be replaced by :HP2.UTF-16:EHP2. preserving
+019900170213the case of :HP2.UTF:EHP2., the replacement string has to be specified
+020000170213as :HP2.???-16:EHP2. when using the question mark (?) as
+020100170213the wildcard character.
+020200170213.*
+020300170213:IMHELP name='COM/OPTPARM'.
+020400170213.*
+020500170213:PARML.
+020600170213:PT.:PK DEF.*NONE:EPK.
+020700170213:PD.Specify *NONE to search and replace without using a
+020800170213wildcard character.
+020900170213:PT.:PV.wildcard-character:EPV.
+021000170213:PD.Specify a character to use as the wildcard.
+021100170213:EPARML.
+021200170213.*
+021300170213:EHELP.
+021400170213.*
+021500170213.*====================================================================
+021600170213.*  Textbausteine, die an mehreren Stellen im Hilfetext
+021700170213.*  verwendet werden.
+021800170213.*====================================================================
+021900170213
+022000170213.*=====================================
+022100170213.*  Erforderlicher Parameter
+022200170213.*=====================================
+022300170213:HELP NAME='COM/REQPARM'.
+022400170213:P.
+022500170213This is a required parameter.
+022600170213:P.
+022700170213:IMHELP name='COM/VALUES'.
+022800170213:EHELP.
+022900170213
+023000170213.*=====================================
+023100170213.*  Optionaler Parameter
+023200170213.*=====================================
+023300170213:HELP NAME='COM/OPTPARM'.
+023400170213:P.
+023500170213This is an optional parameter.
+023600170213:P.
+023700170213:IMHELP name='COM/VALUES'.
+023800170213:EHELP.
+023900170213
+024000170213.*=====================================
+024100170213.*  Werteliste
+024200170213.*=====================================
+024300170213:HELP NAME='COM/VALUES'.
+024400170213:P.
+024500170213The possible values are:
+024600170213:EHELP.
+024700170213.*
+024800170213:EPNLGRP.

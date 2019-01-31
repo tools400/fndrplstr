@@ -1,0 +1,172 @@
+000100170213     /* =================================================================== */
+000200170213     /*                                                                     */
+000300170213     /*  Documentation:                                                     */
+000400170213     /*                                                                     */
+000500170213     /*  Utility . . . : FNDRPLSTR                                          */
+000600170213     /*  Object  . . . : A_INSTALL  (PGM)                                   */
+000700170213     /*  Source member : A_INSTALL                                          */
+000800170213     /*  Source type . : CLLE                                               */
+000900170213     /*  Description   : FNDRPLSTR - Installer                              */
+001000170213     /*  Author  . . . : Thomas Raddatz   <thomas.raddatz@tools400.de>      */
+001100170213     /*                                                                     */
+001200170213     /* =================================================================== */
+001300170213     /*                                                                     */
+001400170213     /*  This software is free software, you can redistribute it and/or     */
+001500170213     /*  modify it under the terms of the GNU General Public License (GPL)  */
+001600170213     /*  as published by the Free Software Foundation.                      */
+001700170213     /*                                                                     */
+001800170213     /*  See GNU General Public License for details.                        */
+001900170213     /*          http://www.opensource.org                                  */
+002000170213     /*          http://www.opensource.org/licenses/gpl-license.html        */
+002100170213     /*                                                                     */
+002200170213     /* =================================================================== */
+002300170213     /*  History:                                                           */
+002400170213     /*                                                                     */
+002500170213     /*  Datum       Name          Änderung                                 */
+002600170213     /*  ----------  ------------  ---------------------------------------  */
+002700170213     /*                                                                     */
+002800170213     /* =================================================================== */
+002900170213     /*   >>PRE-COMPILER<<                                                  */
+003000170213     /*     >>CRTCMD<<    CRTBNDCL  PGM(QTEMP/&OB) +                        */
+003100170213     /*                             SRCFILE(&SL/&SF) SRCMBR(&SM);           */
+003200170213     /*     >>IMPORTANT<<                                                   */
+003300170213     /*       >>PARM<<    OPTION(*EVENTF);                                  */
+003400170213     /*     >>END-IMPORTANT<<                                               */
+003500170213     /*     >>EXECUTE<<                                                     */
+003600170213     /*     >>CMD<<       CALL   PGM(QTEMP/A_INSTALL) +                     */
+003700170213     /*                          PARM('*CURRENT' '&SF' '&LI' 'GER');        */
+003800170213     /*     >>CMD<<       DLTPGM PGM(QTEMP/A_INSTALL);                      */
+003900170213     /*   >>END-PRE-COMPILER<<                                              */
+004000170213     /* =================================================================== */
+004100170213             PGM        PARM(&TGTRLS &SRCFILE &TOLIB &LNG &TAGSREQ)
+004200170213
+004300170213             DCL        VAR(&TGTRLS   ) TYPE(*CHAR) LEN(10)
+004400170213             DCL        VAR(&SRCFILE  ) TYPE(*CHAR) LEN(10)
+004500170213             DCL        VAR(&TOLIB    ) TYPE(*CHAR) LEN(10)
+004600170213             DCL        VAR(&LNG      ) TYPE(*CHAR) LEN( 3)
+004700170213             DCL        VAR(&TAGSREQ  ) TYPE(*CHAR) LEN(10)
+004800170213
+004900170213             DCL        VAR(&SRCLIB   ) TYPE(*CHAR) LEN(10)
+005000170213
+005100170213             DCL        VAR(&CRTMSGF  ) TYPE(*CHAR) LEN(10)
+005200170213             DCL        VAR(&MSGF     ) TYPE(*CHAR) LEN(10) VALUE('FNDRPLSTR')
+005300170213             DCL        VAR(&PNLGRP   ) TYPE(*CHAR) LEN(10)
+005400170213             DCL        VAR(&CMD      ) TYPE(*CHAR) LEN(10)
+005500170213
+005600170213             CHGVAR     VAR(&SRCLIB) VALUE(&TOLIB   )
+005700170213
+005800170213     /* -------------------------------- */
+005900170213     /*  Delete old objects              */
+006000170213     /* -------------------------------- */
+006100170213             DLTCMD    CMD(&TOLIB/FNDRPLSTR)
+006200170213             MONMSG     MSGID(CPF2105)
+006300170213
+006400170213             DLTPGM    PGM(&TOLIB/FNDRPLR1)
+006500170213             MONMSG     MSGID(CPF2105)
+006600170213
+006700170213             DLTMOD    MODULE(&TOLIB/FNDRPLR1)
+006800170213             MONMSG     MSGID(CPF2105)
+006900170213
+007000170213             DLTMOD    MODULE(&TOLIB/PRGMTRR1)
+007100170213             MONMSG     MSGID(CPF2105)
+007200170213
+007300170213             DLTPNLGRP PNLGRP(&TOLIB/FNDRPLPG)
+007400170213             MONMSG     MSGID(CPF2105)
+007500170213
+007600170213             DLTMSGF    MSGF(&TOLIB/&MSGF)
+007700170213             MONMSG     MSGID(CPF2105)
+007800170213
+007900170213             RMVMSG     PGMQ(*SAME (*)) CLEAR(*ALL)
+008000170213
+008100170213     /* -------------------------------- */
+008200170213     /*  Create message file             */
+008300170213     /* -------------------------------- */
+008400170213             IF         COND(&LNG *EQ 'ENG') THEN(DO)
+008500170213                CHGVAR     VAR(&CRTMSGF) VALUE('A_MSG_ENG')
+008600170213                CHGVAR     VAR(&PNLGRP ) VALUE('FNDRPLPE')
+008700170213                CHGVAR     VAR(&CMD    ) VALUE('FNDRPLSTRE')
+008800170213             ENDDO
+008900170213             ELSE       CMD(DO)
+009000170213                CHGVAR     VAR(&CRTMSGF) VALUE('A_MSG_GER')
+009100170213                CHGVAR     VAR(&PNLGRP ) VALUE('FNDRPLPG')
+009200170213                CHGVAR     VAR(&CMD    ) VALUE('FNDRPLSTRG')
+009300170213             ENDDO
+009400170213
+009500170213             CRTMSGF    MSGF(&TOLIB/&MSGF) +
+009600170213                          TEXT('Find and Replace Strings')
+009700170213
+009800170213             CRTCLPGM   PGM(QTEMP/&CRTMSGF) +
+009900170213                          SRCFILE(&SRCLIB/&SRCFILE) SRCMBR(*PGM) +
+010000170213                          OPTION(*LSTDBG) +
+010100170213                          TGTRLS(&TGTRLS)
+010200170213             DLTSPLF    FILE(&CRTMSGF  ) JOB(*) SPLNBR(*LAST)
+010300170213             MONMSG     MSGID(CPF0000)
+010400170213
+010500170213             CALL       PGM(QTEMP/&CRTMSGF) PARM(&TOLIB)
+010600170213             DLTPGM     PGM(QTEMP/&CRTMSGF)
+010700170213
+010800170213     /* -------------------------------- */
+010900170213     /*  Create modules                  */
+011000170213     /* -------------------------------- */
+011100170213             CRTRPGMOD  MODULE(&TOLIB/FNDRPLR1) +
+011200170213                          SRCFILE(&SRCLIB/&SRCFILE) SRCMBR(*MODULE) +
+011300170213                          TEXT(*SRCMBRTXT) +
+011400170213                          DBGVIEW(*LIST) +
+011500170213                          TRUNCNBR(*NO) +
+011600170213                          TGTRLS(&TGTRLS)
+011700170213             DLTSPLF    FILE(FNDRPLR1) JOB(*) SPLNBR(*LAST)
+011800170213             MONMSG     MSGID(CPF0000)
+011900170213
+012000170213             CRTRPGMOD MODULE(&TOLIB/PRGMTRR1) +
+012100170213                          SRCFILE(&SRCLIB/&SRCFILE) SRCMBR(*MODULE) +
+012200170213                          TEXT(*SRCMBRTXT) +
+012300170213                          DBGVIEW(*LIST) +
+012400170213                          TRUNCNBR(*NO) +
+012500170213                          TGTRLS(&TGTRLS)
+012600170213             DLTSPLF    FILE(PRGMTRR1) JOB(*) SPLNBR(*LAST)
+012700170213             MONMSG     MSGID(CPF0000)
+012800170213
+012900170213     /* -------------------------------- */
+013000170213     /*  Create programs                 */
+013100170213     /* -------------------------------- */
+013200170213             CRTPGM     PGM(&TOLIB/FNDRPLSTR) +
+013300170213                          MODULE(&TOLIB/FNDRPLR1  +
+013400170213                                 &TOLIB/PRGMTRR1) +
+013500170213                          ENTMOD(&TOLIB/FNDRPLR1) +
+013600170213                          BNDSRVPGM(&TOLIB/BASICS1  +
+013700170213                                    &TOLIB/RTVMBRL) +
+013800170213                          DETAIL(*BASIC) +
+013900170213                          ACTGRP(*NEW) +
+014000170213                          TGTRLS(&TGTRLS)
+014100170213             DLTSPLF    FILE(FNDRPLSTR ) JOB(*) SPLNBR(*LAST)
+014200170213             MONMSG     MSGID(CPF0000)
+014300170213
+014400170213     /* -------------------------------- */
+014500170213     /*  Create panel groups             */
+014600170213     /* -------------------------------- */
+014700170213             CRTPNLGRP PNLGRP(&TOLIB/FNDRPLSTRP) +
+014800170213                          SRCFILE(&SRCLIB/&SRCFILE) +
+014900170213                          SRCMBR(&PNLGRP)
+015000170213             DLTSPLF    FILE(&PNLGRP   ) JOB(*) SPLNBR(*LAST)
+015100170213             MONMSG     MSGID(CPF0000)
+015200170213
+015300170213     /* -------------------------------- */
+015400170213     /*  Create commands                 */
+015500170213     /* -------------------------------- */
+015600170213             CRTCMD     CMD(&TOLIB/FNDRPLSTR) +
+015700170213                          PGM(&TOLIB/FNDRPLSTR) +
+015800170213                          SRCFILE(&SRCLIB/&SRCFILE) +
+015900170213                          SRCMBR(&CMD) +
+016000170213                          MSGF(&TOLIB/FNDRPLSTR) +
+016100170213                          HLPPNLGRP(&TOLIB/FNDRPLSTRP) +
+016200170213                          HLPID(FNDRPLSTR)
+016300170213             DLTSPLF    FILE(&CMD      ) JOB(*) SPLNBR(*LAST)
+016400170213             MONMSG     MSGID(CPF0000)
+016500170213
+016600170213     /* -------------------------------- */
+016700170213     /*  Delete obsolete objects         */
+016800170213     /* -------------------------------- */
+016900170213             DLTMOD    MODULE(&TOLIB/FNDRPLR1)
+017000170213             DLTMOD    MODULE(&TOLIB/PRGMTRR1)
+017100170213
+017200170213             ENDPGM
