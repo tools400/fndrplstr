@@ -1,18 +1,18 @@
-000100170213      /IF NOT DEFINED(msg_t     )
-000200170213      /DEFINE msg_t
-000300170213      * ============================================================= *
-000400170213      *   Message structure                                           *
-000500170213      * ============================================================= *
-000600170213      *
-000700170213     D msg_t           DS                  qualified           based(pDummy)
-000800170213     D  ID                                 likeds(msgID_t)
-000900170213     D  data                        512A
-001000170213     D  type                         10A
-001100170213     D  file                         10A
-001200170213     D  lib                          10A
-001300170213      *
-001400170213     D msgID_t         DS                  qualified           based(pDummy)
-001500170213     D  prefix                        3A
-001600170213     D  nbr                           4S 0
-001700170213      *
-001800170213      /ENDIF
+      /IF NOT DEFINED(msg_t     )
+      /DEFINE msg_t
+      * ============================================================= *
+      *   Message structure                                           *
+      * ============================================================= *
+      *
+     D msg_t           DS                  qualified           based(pDummy)
+     D  ID                                 likeds(msgID_t)
+     D  data                        512A
+     D  type                         10A
+     D  file                         10A
+     D  lib                          10A
+      *
+     D msgID_t         DS                  qualified           based(pDummy)
+     D  prefix                        3A
+     D  nbr                           4S 0
+      *
+      /ENDIF

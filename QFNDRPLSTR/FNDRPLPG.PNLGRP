@@ -1,248 +1,248 @@
-000100170213.*=====================================================================*
-000200170213.*                                                                     *
-000300170213.*  Kurzdokumentation :                                                *
-000400170213.*                                                                     *
-000500170213.*  Bereich . . . : FNDRPLSTR                                          *
-000600170213.*  Objekt  . . . : FNDRPLSTRP                                         *
-000700170213.*  Beschreibung  : Find and Replace Strings - Ger                     *
-000800170213.*  Author  . . . : Thomas Raddatz   <thomas.raddatz@tools400.de>      *
-000900170213.*  Datum . . . . : 05.01.2004                                         *
-001000170213.*                                                                     *
-001100170213.*=====================================================================*
-001200170213.*                                                                     *
-001300170213.*  This software is free software, you can redistribute it and/or     *
-001400170213.*  modify it under the terms of the GNU General Public License (GPL)  *
-001500170213.*  as published by the Free Software Foundation.                      *
-001600170213.*                                                                     *
-001700170213.*  See GNU General Public License for details.                        *
-001800170213.*          http://www.opensource.org                                  *
-001900170213.*          http://www.opensource.org/licenses/gpl-license.html        *
-002000170213.*                                                                     *
-002100170213.*=====================================================================*
-002200170213.*  History:                                                           *
-002300170213.*                                                                     *
-002400170213.*  Datum       Name          Änderung                                 *
-002500170213.*  ----------  ------------  ---------------------------------------  *
-002600170213.*                                                                     *
-002700170213.*=====================================================================*
-002800170213.* >>PRE-COMPILER<<                                                    *
-002900170213.*                                                                     *
-003000170213.*   >>CRTCMD<< CRTPNLGRP    PNLGRP(&LI/FNDRPLSTRP) +                  *
-003100170213.*                           SRCFILE(&SL/&SF) +                        *
-003200170213.*                           SRCMBR(&SM);                              *
-003300170213.*                                                                     *
-003400170213.*   >>COMPILE<<                                                       *
-003500170213.*   >>END-COMPILE<<                                                   *
-003600170213.*                                                                     *
-003700170213.*   >>EXECUTE<<                                                       *
-003800170213.*                                                                     *
-003900170213.* >>END-PRE-COMPILER<<                                                *
-004000170213.*=====================================================================*
-004100170213:PNLGRP.
-004200170213.*
-004300170213:HELP name='FNDRPLSTR/ALL'.
-004400170213:IMHELP name=FNDRPLSTR.
-004500170213:IMHELP name='FNDRPLSTR/FILE      '.
-004600170213:IMHELP name='FNDRPLSTR/MBR       '.
-004700170213:IMHELP name='FNDRPLSTR/VALUES    '.
-004800170213:IMHELP name='FNDRPLSTR/CASE      '.
-004900170213:IMHELP name='FNDRPLSTR/WILDCARD  '.
-005000170213:EHELP.
-005100170213.*--------------------------------------------------------------------
-005200170213.* Hilfetext für den Befehl
-005300170213.*--------------------------------------------------------------------
-005400170213:HELP NAME='FNDRPLSTR'.
-005500170213Zeichenkette suchen und ersetzen (FNDRPLSTR) - Hilfe
-005600170213:P.
-005700170213Der Befehl FNDRPLSTR durchsucht eine Teildatei nach einer Zeichenkette
-005800170213und ersetzt diese durch eine Ersetzungszeichenkette.
-005900170213.*
-006000170213:EHELP.
-006100170213.*
-006200170213.*--------------------------------------------------------------------
-006300170213.* Hilfetext für Schlüsselwort FILE
-006400170213.*--------------------------------------------------------------------
-006500170213:HELP name='FNDRPLSTR/FILE      '.
-006600170213Datei - Hilfe
-006700170213:XH3.Datei (FILE)
-006800170213:P.
-006900170213Name der Datei, welche die zu durchsuchene
-007000170213Teildatei enthält.
-007100170213.*
-007200170213:IMHELP name='COM/REQPARM'.
-007300170213.*
-007400170213:PARML.
-007500170213:PT.:PV.Datei:EPV.
-007600170213:PD.Name der Datei.
-007700170213.*
-007800170213:PT.:PK DEF.*LIBL:EPK.
-007900170213:PD.Datei wird über die Bibliotheksliste gesucht.
-008000170213:PT.:PV.Bibliothek:EPV.
-008100170213:PD.Name der Bibliothek, welche die Datei enthält.
-008200170213:EPARML.
-008300170213.*
-008400170213:EHELP.
-008500170213.*
-008600170213.*--------------------------------------------------------------------
-008700170213.* Hilfetext für Schlüsselwort MBR
-008800170213.*--------------------------------------------------------------------
-008900170213:HELP name='FNDRPLSTR/MBR'.
-009000170213Teildatei - Hilfe
-009100170213:XH3.Teildatei (MBR)
-009200170213:P.
-009300170213Name der zu durchsuchenden Teildatei.
-009400170213.*
-009500170213:IMHELP name='COM/REQPARM'.
-009600170213.*
-009700170213:PARML.
-009800170213:PT.:PV.*FIRST:EPV.
-009900170213:PD.*FIRST eingeben, um die erste Teildateien der Datei zu
-010000170213durchsuchen.
-010100170213:PT.:PV.*ALL:EPV.
-010200170213:PD.*ALL eingeben, um alle Teildateien in der Datei zu
-010300170213durchsuchen.
-010400170213:PT.:PV.Teildatei:EPV.
-010500170213:PD.Name der zu durchsuchenden Teildatei.
-010600170213:EPARML.
-010700170213.*
-010800170213:EHELP.
-010900170213.*
-011000170213.*--------------------------------------------------------------------
-011100170213.* Hilfetext für Schlüsselwort VALUES
-011200170213.*--------------------------------------------------------------------
-011300170213:HELP name='FNDRPLSTR/VALUES'.
-011400170213Suchen und ersetzen - Hilfe
-011500170213:XH3.Suchen und ersetzen (VALUES)
-011600170213:P.
-011700170213Angeben, nach welcher Zeichenkette gesucht werden soll und durch
-011800170213welche Zeichenkette die gesuchte Zeichenfolge ersetzt werden soll.
-011900170213:P.
-012000170213Leere Zeichenketten, führende oder nachgestellte Leerzeichen können
-012100170213durch Anführungszeichen eingegeben, bzw. begrenzt werden.
-012200170213:P.
-012300170213Hexadezimalwerte können über x'...' eingegeben werden, z.B. x'55'.
-012400170213:P.
-012500170213:HP2.Suchzeichenkette.:EHP2. Angeben der Suchzeichenkette, nach der
-012600170213gesucht wird. Wenn die Suchzeichenkette gefunden wird, wird sie
-012700170213durch die Ersetzungszeichenkette ersetzt.
-012800170213:P.
-012900170213:HP2.Ersetzungszeichenkette.:EHP2. Angeben der Zeichenfolge, durch die die
-013000170213Suchzeichenkette ersetzt wird.
-013100170213:P.
-013200170213:HP1.Beispiel 1:EHP1.
-013300170213:P.
-013400170213In diesem Beispiel wird die Zeichenkette "HELLO" durch die Zeichenfolge
-013500170213"WORLD" ersetzt.
-013600170213:P.
-013700170213:LINES.
-013800170213FNDRPLSTR FILE(*LIBL/QSRC)
-013900170213   MBR(TEST_SRCM) VALUES((HELLO WORLD))
-014000170213:ELINES.
-014100170213:P.
-014200170213:HP1.Beispiel 2:EHP1.
-014300170213:P.
-014400170213In diesem Beispiel wird die Zeichenkette "HELLO  " (mit nachgestellten)
-014500170213Leerzeichen durch die Zeichenfolge "WORLD" ersetzt. Hierbei ist zu beachten, dass
-014600170213beide Zeichenfolgen unterschiedlich lang sind und es somit zu Verschiebungen
-014700170213innerhalb der Zeile der Teildatei kommen kann.
-014800170213:P.
-014900170213:LINES.
-015000170213FNDRPLSTR FILE(*LIBL/QSRC)
-015100170213   MBR(TEST_SRCM) VALUES(("HELLO  " WORLD))
-015200170213:ELINES.
-015300170213.*
-015400170213:EHELP.
-015500170213.*
-015600170213.*--------------------------------------------------------------------
-015700170213.* Hilfetext für Schlüsselwort CASE
-015800170213.*--------------------------------------------------------------------
-015900170213:HELP name='FNDRPLSTR/CASE'.
-016000170213Übereinstimmung (Groß/Klein) - Hilfe
-016100170213:XH3.Übereinstimmung (Groß/Klein) (CASE)
-016200170213:P.
-016300170213Gibt die Art der Übereinstimmung der Schreibweise der
-016400170213Suchzeichenkette an.
-016500170213.*
-016600170213:IMHELP name='COM/OPTPARM'.
-016700170213.*
-016800170213:PARML.
-016900170213:PT.:PK DEF.*IGNORE:EPK.
-017000170213:PD.*IGNORE eingeben, um in der Teildatei unabhängig von
-017100170213der Schreibweise nach der Zeichenfolge zu suchen.
-017200170213:PT.:PV.*MATCH:EPV.
-017300170213:PD.*MATCH eingeben, um in der Teildatei abhängig von der
-017400170213Schreibweise nach der Zeichenfolge zu suchen.
-017500170213:EPARML.
-017600170213.*
-017700170213:EHELP.
-017800170213.*
-017900170213.*--------------------------------------------------------------------
-018000170213.* Hilfetext für Schlüsselwort WILDCARD
-018100170213.*--------------------------------------------------------------------
-018200170213:HELP name='FNDRPLSTR/WILDCARD'.
-018300170213Joker-Zeichen - Hilfe
-018400170213:XH3.Joker-Zeichen (WILDCARD)
-018500170213:P.
-018600170213Definiert das bei der Suche oder beim Ersetzen verwendete
-018700170213Joker-Zeichen.
-018800170213:P.
-018900170213Während des Suchvorgangs markiert das Joker-Zeichen die Stellen
-019000170213innerhalb der Suchzeichenfolge, die beim Vergleichen ignoriert
-019100170213werden sollen. So werden unter Angabe von :HP2.?aus:EHP2. auch die Begriffe
-019200170213:HP2.Haus:EHP2.,:HP2.Maus:EHP2. und :HP2.raus:EHP2. gefunden.
-019300170213:P.
-019400170213Beim Ersetzen markiert das Jokerzeichen die Stellen in der
-019500170213Ausgangszeichenkette, die erhalten bleiben sollen. Soll zum Beispiel
-019600170213die Zeichenkette :HP2.UTF-8:EHP2. durch :HP2.UTF-16:EHP2. ersetzt werden
-019700170213und dabei die Schreibweise von :HP2.UTF:EHP2. oder :HP2.utf:EHP2. beibehalten
-019800170213werden, so ist als Ersetzungszeichenkette :HP2.???-16:EHP2. anzugeben und das
-019900170213Joker-Zeichen auf :HP2.?:EHP2. zu setzen.
-020000170213.*
-020100170213:IMHELP name='COM/OPTPARM'.
-020200170213.*
-020300170213:PARML.
-020400170213:PT.:PK DEF.*NONE:EPK.
-020500170213:PD.*NONE eingeben, um kein Joker-Zeichen zuzulassen. Eine
-020600170213Zeichenfolge wird nur dann ersetzt, wenn sie mit der Suchzeichenkette
-020700170213übereinstimmt.
-020800170213:PT.:PV.Joker-Zeichen:EPV.
-020900170213:PD.Spezifiziert das beim Suchen oder Ersetzen zu verwendende
-021000170213Joker-Zeichen.
-021100170213:EPARML.
-021200170213.*
-021300170213:EHELP.
-021400170213.*
-021500170213.*====================================================================
-021600170213.*  Textbausteine, die an mehreren Stellen im Hilfetext
-021700170213.*  verwendet werden.
-021800170213.*====================================================================
-021900170213
-022000170213.*=====================================
-022100170213.*  Erforderlicher Parameter
-022200170213.*=====================================
-022300170213:HELP NAME='COM/REQPARM'.
-022400170213:P.
-022500170213Dieser Parameter ist erforderlich.
-022600170213:P.
-022700170213:IMHELP name='COM/VALUES'.
-022800170213:EHELP.
-022900170213
-023000170213.*=====================================
-023100170213.*  Optionaler Parameter
-023200170213.*=====================================
-023300170213:HELP NAME='COM/OPTPARM'.
-023400170213:P.
-023500170213Dieser Parameter ist optional.
-023600170213:P.
-023700170213:IMHELP name='COM/VALUES'.
-023800170213:EHELP.
-023900170213
-024000170213.*=====================================
-024100170213.*  Werteliste
-024200170213.*=====================================
-024300170213:HELP NAME='COM/VALUES'.
-024400170213:P.
-024500170213Mögliche Werte sind:
-024600170213:EHELP.
-024700170213.*
-024800170213:EPNLGRP.
+.*=====================================================================*
+.*                                                                     *
+.*  Kurzdokumentation :                                                *
+.*                                                                     *
+.*  Bereich . . . : FNDRPLSTR                                          *
+.*  Objekt  . . . : FNDRPLSTRP                                         *
+.*  Beschreibung  : Find and Replace Strings - Ger                     *
+.*  Author  . . . : Thomas Raddatz   <thomas.raddatz@tools400.de>      *
+.*  Datum . . . . : 05.01.2004                                         *
+.*                                                                     *
+.*=====================================================================*
+.*                                                                     *
+.*  This software is free software, you can redistribute it and/or     *
+.*  modify it under the terms of the GNU General Public License (GPL)  *
+.*  as published by the Free Software Foundation.                      *
+.*                                                                     *
+.*  See GNU General Public License for details.                        *
+.*          http://www.opensource.org                                  *
+.*          http://www.opensource.org/licenses/gpl-license.html        *
+.*                                                                     *
+.*=====================================================================*
+.*  History:                                                           *
+.*                                                                     *
+.*  Datum       Name          Änderung                                 *
+.*  ----------  ------------  ---------------------------------------  *
+.*                                                                     *
+.*=====================================================================*
+.* >>PRE-COMPILER<<                                                    *
+.*                                                                     *
+.*   >>CRTCMD<< CRTPNLGRP    PNLGRP(&LI/FNDRPLSTRP) +                  *
+.*                           SRCFILE(&SL/&SF) +                        *
+.*                           SRCMBR(&SM);                              *
+.*                                                                     *
+.*   >>COMPILE<<                                                       *
+.*   >>END-COMPILE<<                                                   *
+.*                                                                     *
+.*   >>EXECUTE<<                                                       *
+.*                                                                     *
+.* >>END-PRE-COMPILER<<                                                *
+.*=====================================================================*
+:PNLGRP.
+.*
+:HELP name='FNDRPLSTR/ALL'.
+:IMHELP name=FNDRPLSTR.
+:IMHELP name='FNDRPLSTR/FILE      '.
+:IMHELP name='FNDRPLSTR/MBR       '.
+:IMHELP name='FNDRPLSTR/VALUES    '.
+:IMHELP name='FNDRPLSTR/CASE      '.
+:IMHELP name='FNDRPLSTR/WILDCARD  '.
+:EHELP.
+.*--------------------------------------------------------------------
+.* Hilfetext für den Befehl
+.*--------------------------------------------------------------------
+:HELP NAME='FNDRPLSTR'.
+Zeichenkette suchen und ersetzen (FNDRPLSTR) - Hilfe
+:P.
+Der Befehl FNDRPLSTR durchsucht eine Teildatei nach einer Zeichenkette
+und ersetzt diese durch eine Ersetzungszeichenkette.
+.*
+:EHELP.
+.*
+.*--------------------------------------------------------------------
+.* Hilfetext für Schlüsselwort FILE
+.*--------------------------------------------------------------------
+:HELP name='FNDRPLSTR/FILE      '.
+Datei - Hilfe
+:XH3.Datei (FILE)
+:P.
+Name der Datei, welche die zu durchsuchene
+Teildatei enthält.
+.*
+:IMHELP name='COM/REQPARM'.
+.*
+:PARML.
+:PT.:PV.Datei:EPV.
+:PD.Name der Datei.
+.*
+:PT.:PK DEF.*LIBL:EPK.
+:PD.Datei wird über die Bibliotheksliste gesucht.
+:PT.:PV.Bibliothek:EPV.
+:PD.Name der Bibliothek, welche die Datei enthält.
+:EPARML.
+.*
+:EHELP.
+.*
+.*--------------------------------------------------------------------
+.* Hilfetext für Schlüsselwort MBR
+.*--------------------------------------------------------------------
+:HELP name='FNDRPLSTR/MBR'.
+Teildatei - Hilfe
+:XH3.Teildatei (MBR)
+:P.
+Name der zu durchsuchenden Teildatei.
+.*
+:IMHELP name='COM/REQPARM'.
+.*
+:PARML.
+:PT.:PV.*FIRST:EPV.
+:PD.*FIRST eingeben, um die erste Teildateien der Datei zu
+durchsuchen.
+:PT.:PV.*ALL:EPV.
+:PD.*ALL eingeben, um alle Teildateien in der Datei zu
+durchsuchen.
+:PT.:PV.Teildatei:EPV.
+:PD.Name der zu durchsuchenden Teildatei.
+:EPARML.
+.*
+:EHELP.
+.*
+.*--------------------------------------------------------------------
+.* Hilfetext für Schlüsselwort VALUES
+.*--------------------------------------------------------------------
+:HELP name='FNDRPLSTR/VALUES'.
+Suchen und ersetzen - Hilfe
+:XH3.Suchen und ersetzen (VALUES)
+:P.
+Angeben, nach welcher Zeichenkette gesucht werden soll und durch
+welche Zeichenkette die gesuchte Zeichenfolge ersetzt werden soll.
+:P.
+Leere Zeichenketten, führende oder nachgestellte Leerzeichen können
+durch Anführungszeichen eingegeben, bzw. begrenzt werden.
+:P.
+Hexadezimalwerte können über x'...' eingegeben werden, z.B. x'55'.
+:P.
+:HP2.Suchzeichenkette.:EHP2. Angeben der Suchzeichenkette, nach der
+gesucht wird. Wenn die Suchzeichenkette gefunden wird, wird sie
+durch die Ersetzungszeichenkette ersetzt.
+:P.
+:HP2.Ersetzungszeichenkette.:EHP2. Angeben der Zeichenfolge, durch die die
+Suchzeichenkette ersetzt wird.
+:P.
+:HP1.Beispiel 1:EHP1.
+:P.
+In diesem Beispiel wird die Zeichenkette "HELLO" durch die Zeichenfolge
+"WORLD" ersetzt.
+:P.
+:LINES.
+FNDRPLSTR FILE(*LIBL/QSRC)
+   MBR(TEST_SRCM) VALUES((HELLO WORLD))
+:ELINES.
+:P.
+:HP1.Beispiel 2:EHP1.
+:P.
+In diesem Beispiel wird die Zeichenkette "HELLO  " (mit nachgestellten)
+Leerzeichen durch die Zeichenfolge "WORLD" ersetzt. Hierbei ist zu beachten, dass
+beide Zeichenfolgen unterschiedlich lang sind und es somit zu Verschiebungen
+innerhalb der Zeile der Teildatei kommen kann.
+:P.
+:LINES.
+FNDRPLSTR FILE(*LIBL/QSRC)
+   MBR(TEST_SRCM) VALUES(("HELLO  " WORLD))
+:ELINES.
+.*
+:EHELP.
+.*
+.*--------------------------------------------------------------------
+.* Hilfetext für Schlüsselwort CASE
+.*--------------------------------------------------------------------
+:HELP name='FNDRPLSTR/CASE'.
+Übereinstimmung (Groß/Klein) - Hilfe
+:XH3.Übereinstimmung (Groß/Klein) (CASE)
+:P.
+Gibt die Art der Übereinstimmung der Schreibweise der
+Suchzeichenkette an.
+.*
+:IMHELP name='COM/OPTPARM'.
+.*
+:PARML.
+:PT.:PK DEF.*IGNORE:EPK.
+:PD.*IGNORE eingeben, um in der Teildatei unabhängig von
+der Schreibweise nach der Zeichenfolge zu suchen.
+:PT.:PV.*MATCH:EPV.
+:PD.*MATCH eingeben, um in der Teildatei abhängig von der
+Schreibweise nach der Zeichenfolge zu suchen.
+:EPARML.
+.*
+:EHELP.
+.*
+.*--------------------------------------------------------------------
+.* Hilfetext für Schlüsselwort WILDCARD
+.*--------------------------------------------------------------------
+:HELP name='FNDRPLSTR/WILDCARD'.
+Joker-Zeichen - Hilfe
+:XH3.Joker-Zeichen (WILDCARD)
+:P.
+Definiert das bei der Suche oder beim Ersetzen verwendete
+Joker-Zeichen.
+:P.
+Während des Suchvorgangs markiert das Joker-Zeichen die Stellen
+innerhalb der Suchzeichenfolge, die beim Vergleichen ignoriert
+werden sollen. So werden unter Angabe von :HP2.?aus:EHP2. auch die Begriffe
+:HP2.Haus:EHP2.,:HP2.Maus:EHP2. und :HP2.raus:EHP2. gefunden.
+:P.
+Beim Ersetzen markiert das Jokerzeichen die Stellen in der
+Ausgangszeichenkette, die erhalten bleiben sollen. Soll zum Beispiel
+die Zeichenkette :HP2.UTF-8:EHP2. durch :HP2.UTF-16:EHP2. ersetzt werden
+und dabei die Schreibweise von :HP2.UTF:EHP2. oder :HP2.utf:EHP2. beibehalten
+werden, so ist als Ersetzungszeichenkette :HP2.???-16:EHP2. anzugeben und das
+Joker-Zeichen auf :HP2.?:EHP2. zu setzen.
+.*
+:IMHELP name='COM/OPTPARM'.
+.*
+:PARML.
+:PT.:PK DEF.*NONE:EPK.
+:PD.*NONE eingeben, um kein Joker-Zeichen zuzulassen. Eine
+Zeichenfolge wird nur dann ersetzt, wenn sie mit der Suchzeichenkette
+übereinstimmt.
+:PT.:PV.Joker-Zeichen:EPV.
+:PD.Spezifiziert das beim Suchen oder Ersetzen zu verwendende
+Joker-Zeichen.
+:EPARML.
+.*
+:EHELP.
+.*
+.*====================================================================
+.*  Textbausteine, die an mehreren Stellen im Hilfetext
+.*  verwendet werden.
+.*====================================================================
+
+.*=====================================
+.*  Erforderlicher Parameter
+.*=====================================
+:HELP NAME='COM/REQPARM'.
+:P.
+Dieser Parameter ist erforderlich.
+:P.
+:IMHELP name='COM/VALUES'.
+:EHELP.
+
+.*=====================================
+.*  Optionaler Parameter
+.*=====================================
+:HELP NAME='COM/OPTPARM'.
+:P.
+Dieser Parameter ist optional.
+:P.
+:IMHELP name='COM/VALUES'.
+:EHELP.
+
+.*=====================================
+.*  Werteliste
+.*=====================================
+:HELP NAME='COM/VALUES'.
+:P.
+Mögliche Werte sind:
+:EHELP.
+.*
+:EPNLGRP.
