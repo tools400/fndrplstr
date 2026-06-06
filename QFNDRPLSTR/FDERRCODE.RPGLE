@@ -1,13 +1,15 @@
-      /IF NOT DEFINED(errCode_t )
-      /DEFINE errCode_t
-      *===============================================================*
-      *  API error code                                               *
-      *===============================================================*
-     D errCode_t       DS                  qualified           based(pDummy)
-     D  bytPrv                       10I 0
-     D  bytAvl                       10I 0
-     D  excID                         7A
-     D  reserved_1                    1A
-     D  excDta                      256A
-      *
-      /ENDIF
+**free
+/if NOT defined(errCode_t)
+/define errCode_t
+//===============================================================*
+//  API error code                                               *
+//===============================================================*
+dcl-ds errCode_t qualified based(pDummy);
+  bytPrv     int(10);
+  bytAvl     int(10);
+  excID      char(7);
+  reserved_1 char(1);
+  excDta     char(256);
+end-ds;
+
+/endif

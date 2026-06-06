@@ -1,12 +1,14 @@
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0002
-      *
-      * Applied &1 changes to member &2 in file &4/&3.
-      *
-     D FRS0002         DS
-     D  FRS00021                    010P 0 INZ(*ZEROS )
-     D  FRS00022                    010A   INZ(*BLANKS)
-     D  FRS00023                    010A   INZ(*BLANKS)
-     D  FRS00024                    010A   INZ(*BLANKS)
-     D FRS0002#        S              8B 0 INZ(0036)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur fr Message-ID : FRS0002
+
+// Applied &1 changes to member &2 in file &4/&3.
+
+dcl-ds FRS0002;
+  FRS00021 packed(010) inz(*zeros);
+  FRS00022 char(010) inz(*blanks);
+  FRS00023 char(010) inz(*blanks);
+  FRS00024 char(010) inz(*blanks);
+end-ds;
+dcl-s FRS0002# bindec(8) inz(0036);
+

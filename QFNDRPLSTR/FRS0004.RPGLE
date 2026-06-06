@@ -1,9 +1,11 @@
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0004
-      *
-      * Retrieving member list ...
-      *
-     D FRS0004         DS
-      *   Keine Ersatzvariablen definiert!
-     D FRS0004#        S              8B 0 INZ(0000)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur fr Message-ID : FRS0004
+
+// Retrieving member list ...
+
+dcl-ds FRS0004;
+end-ds;
+//   Keine Ersatzvariablen definiert!
+dcl-s FRS0004# bindec(8) inz(0000);
+

@@ -22,7 +22,7 @@
      /* =================================================================== */
      /*  History:                                                           */
      /*                                                                     */
-     /*  Datum       Name          Änderung                                 */
+     /*  Datum       Name          nderung                                 */
      /*  ----------  ------------  ---------------------------------------  */
      /*                                                                     */
      /* =================================================================== */
@@ -133,8 +133,8 @@
                           MODULE(&TOLIB/FNDRPLR1  +
                                  &TOLIB/PRGMTRR1) +
                           ENTMOD(&TOLIB/FNDRPLR1) +
-                          BNDSRVPGM(&TOLIB/BASICS1  +
-                                    &TOLIB/RTVMBRL) +
+                          BNDSRVPGM(*LIBL/BASICS1  +
+                                    *LIBL/RTVMBRL) +
                           DETAIL(*BASIC) +
                           ACTGRP(*NEW) +
                           TGTRLS(&TGTRLS)

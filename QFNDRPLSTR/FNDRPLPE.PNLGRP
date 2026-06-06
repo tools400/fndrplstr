@@ -21,7 +21,7 @@
 .*=====================================================================*
 .*  History:                                                           *
 .*                                                                     *
-.*  Datum       Name          Änderung                                 *
+.*  Datum       Name          nderung                                 *
 .*  ----------  ------------  ---------------------------------------  *
 .*                                                                     *
 .*=====================================================================*
@@ -49,7 +49,7 @@
 :IMHELP name='FNDRPLSTR/WILDCARD  '.
 :EHELP.
 .*--------------------------------------------------------------------
-.* Hilfetext für den Befehl
+.* Hilfetext fr den Befehl
 .*--------------------------------------------------------------------
 :HELP NAME='FNDRPLSTR'.
 Find and replace string (FNDRPLSTR) - Help
@@ -61,7 +61,7 @@ can be replace by a new value.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort FILE
+.* Hilfetext fr Schlsselwort FILE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/FILE      '.
 File - Help
@@ -89,7 +89,7 @@ for the file.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort MBR
+.* Hilfetext fr Schlsselwort MBR
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/MBR'.
 Member - Help
@@ -112,7 +112,7 @@ you want to search.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort VALUES
+.* Hilfetext fr Schlsselwort VALUES
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/VALUES'.
 Search and replace - Help
@@ -157,7 +157,7 @@ FNDRPLSTR FILE(*LIBL/QSRC)
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort CASE
+.* Hilfetext fr Schlsselwort CASE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/CASE'.
 Kind of match - Help
@@ -179,7 +179,7 @@ string.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort WILDCARD
+.* Hilfetext fr Schlsselwort WILDCARD
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/WILDCARD'.
 Wildcard character - Hilfe

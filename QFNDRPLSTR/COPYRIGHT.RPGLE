@@ -1,8 +1,7 @@
-      /if not defined(COPYRIGHT_DSPEC)
-     h copyright('V1.2.1 - 09.02.2017 - mailto: thomas.raddatz@tools400.de')
-      /eof
-      /endif
-     D FNDRPLSTR_VERSION...
-     D                 C                   '1.2.1'
-     D FNDRPLSTR_DATE...
-     D                 C                   '09.02.2017'
+**free
+/if not defined(COPYRIGHT_DSPEC)
+ctl-opt copyright('V1.3 - 06.06.2026 - mailto: thomas.raddatz@tools400.de');
+/eof
+/endif
+dcl-c FNDRPLSTR_VERSION '1.3';
+dcl-c FNDRPLSTR_DATE '06.06.2026';

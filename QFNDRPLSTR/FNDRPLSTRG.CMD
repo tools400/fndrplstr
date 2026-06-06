@@ -21,7 +21,7 @@
 /* =================================================================== */
 /*  History:                                                           */
 /*                                                                     */
-/*  Datum       Name          Änderung                                 */
+/*  Datum       Name          nderung                                 */
 /*  ----------  ------------  ---------------------------------------  */
 /*                                                                     */
 /* =================================================================== */
@@ -71,7 +71,7 @@
                         RSTD(*YES)             +
                         VALUES(*IGNORE         +
                                *MATCH )        +
-                        PROMPT('Übereinstimmung (Groß/Klein)')
+                        PROMPT('bereinstimmung (Gro/Klein)')
 
              PARM       KWD(WILDCARD)          +
                         TYPE(*CHAR)            +

@@ -21,7 +21,7 @@
 .*=====================================================================*
 .*  History:                                                           *
 .*                                                                     *
-.*  Datum       Name          Änderung                                 *
+.*  Datum       Name          nderung                                 *
 .*  ----------  ------------  ---------------------------------------  *
 .*                                                                     *
 .*=====================================================================*
@@ -49,7 +49,7 @@
 :IMHELP name='FNDRPLSTR/WILDCARD  '.
 :EHELP.
 .*--------------------------------------------------------------------
-.* Hilfetext für den Befehl
+.* Hilfetext fr den Befehl
 .*--------------------------------------------------------------------
 :HELP NAME='FNDRPLSTR'.
 Zeichenkette suchen und ersetzen (FNDRPLSTR) - Hilfe
@@ -60,14 +60,14 @@ und ersetzt diese durch eine Ersetzungszeichenkette.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort FILE
+.* Hilfetext fr Schlsselwort FILE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/FILE      '.
 Datei - Hilfe
 :XH3.Datei (FILE)
 :P.
 Name der Datei, welche die zu durchsuchene
-Teildatei enthält.
+Teildatei enthlt.
 .*
 :IMHELP name='COM/REQPARM'.
 .*
@@ -76,15 +76,15 @@ Teildatei enthält.
 :PD.Name der Datei.
 .*
 :PT.:PK DEF.*LIBL:EPK.
-:PD.Datei wird über die Bibliotheksliste gesucht.
+:PD.Datei wird ber die Bibliotheksliste gesucht.
 :PT.:PV.Bibliothek:EPV.
-:PD.Name der Bibliothek, welche die Datei enthält.
+:PD.Name der Bibliothek, welche die Datei enthlt.
 :EPARML.
 .*
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort MBR
+.* Hilfetext fr Schlsselwort MBR
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/MBR'.
 Teildatei - Hilfe
@@ -108,7 +108,7 @@ durchsuchen.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort VALUES
+.* Hilfetext fr Schlsselwort VALUES
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/VALUES'.
 Suchen und ersetzen - Hilfe
@@ -117,10 +117,10 @@ Suchen und ersetzen - Hilfe
 Angeben, nach welcher Zeichenkette gesucht werden soll und durch
 welche Zeichenkette die gesuchte Zeichenfolge ersetzt werden soll.
 :P.
-Leere Zeichenketten, führende oder nachgestellte Leerzeichen können
-durch Anführungszeichen eingegeben, bzw. begrenzt werden.
+Leere Zeichenketten, fhrende oder nachgestellte Leerzeichen knnen
+durch Anfhrungszeichen eingegeben, bzw. begrenzt werden.
 :P.
-Hexadezimalwerte können über x'...' eingegeben werden, z.B. x'55'.
+Hexadezimalwerte knnen ber x'...' eingegeben werden, z.B. x'55'.
 :P.
 :HP2.Suchzeichenkette.:EHP2. Angeben der Suchzeichenkette, nach der
 gesucht wird. Wenn die Suchzeichenkette gefunden wird, wird sie
@@ -154,30 +154,30 @@ FNDRPLSTR FILE(*LIBL/QSRC)
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort CASE
+.* Hilfetext fr Schlsselwort CASE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/CASE'.
-Übereinstimmung (Groß/Klein) - Hilfe
-:XH3.Übereinstimmung (Groß/Klein) (CASE)
+bereinstimmung (Gro/Klein) - Hilfe
+:XH3.bereinstimmung (Gro/Klein) (CASE)
 :P.
-Gibt die Art der Übereinstimmung der Schreibweise der
+Gibt die Art der bereinstimmung der Schreibweise der
 Suchzeichenkette an.
 .*
 :IMHELP name='COM/OPTPARM'.
 .*
 :PARML.
 :PT.:PK DEF.*IGNORE:EPK.
-:PD.*IGNORE eingeben, um in der Teildatei unabhängig von
+:PD.*IGNORE eingeben, um in der Teildatei unabhngig von
 der Schreibweise nach der Zeichenfolge zu suchen.
 :PT.:PV.*MATCH:EPV.
-:PD.*MATCH eingeben, um in der Teildatei abhängig von der
+:PD.*MATCH eingeben, um in der Teildatei abhngig von der
 Schreibweise nach der Zeichenfolge zu suchen.
 :EPARML.
 .*
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort WILDCARD
+.* Hilfetext fr Schlsselwort WILDCARD
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/WILDCARD'.
 Joker-Zeichen - Hilfe
@@ -186,7 +186,7 @@ Joker-Zeichen - Hilfe
 Definiert das bei der Suche oder beim Ersetzen verwendete
 Joker-Zeichen.
 :P.
-Während des Suchvorgangs markiert das Joker-Zeichen die Stellen
+Whrend des Suchvorgangs markiert das Joker-Zeichen die Stellen
 innerhalb der Suchzeichenfolge, die beim Vergleichen ignoriert
 werden sollen. So werden unter Angabe von :HP2.?aus:EHP2. auch die Begriffe
 :HP2.Haus:EHP2.,:HP2.Maus:EHP2. und :HP2.raus:EHP2. gefunden.
@@ -204,7 +204,7 @@ Joker-Zeichen auf :HP2.?:EHP2. zu setzen.
 :PT.:PK DEF.*NONE:EPK.
 :PD.*NONE eingeben, um kein Joker-Zeichen zuzulassen. Eine
 Zeichenfolge wird nur dann ersetzt, wenn sie mit der Suchzeichenkette
-übereinstimmt.
+bereinstimmt.
 :PT.:PV.Joker-Zeichen:EPV.
 :PD.Spezifiziert das beim Suchen oder Ersetzen zu verwendende
 Joker-Zeichen.
@@ -242,7 +242,7 @@ Dieser Parameter ist optional.
 .*=====================================
 :HELP NAME='COM/VALUES'.
 :P.
-Mögliche Werte sind:
+Mgliche Werte sind:
 :EHELP.
 .*
 :EPNLGRP.

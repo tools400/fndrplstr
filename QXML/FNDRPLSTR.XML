@@ -51,7 +51,7 @@
       appblddate CDATA #REQUIRED
      >
      ]>
-<upload  appname="FNDRPLSTR"  appauthor="Thomas Raddatz"  appblddate=" 2/01/2019">
+<upload  appname="FNDRPLSTR"  appauthor="Thomas Raddatz"  appblddate=" 6/06/2026">
 <install_instructions><![CDATA[
      *----------------------------------------------------------------      ------
      *  1. Upload entire XML to your AS/400 to a source file 112 long, into any mbr
@@ -1289,7 +1289,7 @@ mbrtext =  "FNDRPLSTR - Installer                             "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
      /* =================================================================== */
      /*                                                                     */
@@ -1315,7 +1315,7 @@ srccssid=  "00273">
      /* =================================================================== */
      /*  History:                                                           */
      /*                                                                     */
-     /*  Datum       Name          Änderung                                 */
+     /*  Datum       Name           nderung                                 */
      /*  ----------  ------------  ---------------------------------------  */
      /*                                                                     */
      /* =================================================================== */
@@ -1426,8 +1426,8 @@ srccssid=  "00273">
                           MODULE(&TOLIB/FNDRPLR1  +
                                  &TOLIB/PRGMTRR1) +
                           ENTMOD(&TOLIB/FNDRPLR1) +
-                          BNDSRVPGM(&TOLIB/BASICS1  +
-                                    &TOLIB/RTVMBRL) +
+                          BNDSRVPGM(*LIBL/BASICS1  +
+                                    *LIBL/RTVMBRL) +
                           DETAIL(*BASIC) +
                           ACTGRP(*NEW) +
                           TGTRLS(&TGTRLS)
@@ -1476,14 +1476,14 @@ mbrtext =  "MSG: FRS0001 - FRS0003                            "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
              PGM        PARM(&LI)
 
              DCL        VAR(&LI) TYPE(*CHAR) LEN(10)
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0001                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0001                    */
      /* Searching member &1.                                        */
      /* ----------------------------------------------------------- */
 
@@ -1505,7 +1505,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0002                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0002                    */
      /* Applied &1 changes to member &2 in file &4/&3.              */
      /* ----------------------------------------------------------- */
 
@@ -1530,7 +1530,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0003                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0003                    */
      /* No matches found in member &2 in file &4/&3.                */
      /* ----------------------------------------------------------- */
 
@@ -1555,7 +1555,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0004                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0004                    */
      /* Retrieving member list ...                                  */
      /* ----------------------------------------------------------- */
 
@@ -1574,7 +1574,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0005                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0005                    */
      /* Searching                                                   */
      /* ----------------------------------------------------------- */
 
@@ -1608,14 +1608,14 @@ mbrtext =  "MSG: FRS0001 - FRS0003                            "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
              PGM        PARM(&LI)
 
              DCL        VAR(&LI) TYPE(*CHAR) LEN(10)
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0001                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0001                    */
      /* Searching member &1.                                        */
      /* ----------------------------------------------------------- */
 
@@ -1637,7 +1637,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0002                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0002                    */
      /* Applied &1 changes to member &2 in file &4/&3.              */
      /* ----------------------------------------------------------- */
 
@@ -1648,7 +1648,7 @@ srccssid=  "00273">
                 MSGID(FRS0002) +
                 MSGF(&LI/FNDRPLSTR) +
                 MSG(+
-'&1 Änderungen in Teildatei &2 in Datei &4/&3 durchgeführt.'          +
+'&1  nderungen in Teildatei &2 in Datei &4/&3 durchgef hrt.'          +
                 ) +
                 SEV(00) +
                 FMT( +
@@ -1662,7 +1662,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0003                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0003                    */
      /* No matches found in member &2 in file &4/&3.                */
      /* ----------------------------------------------------------- */
 
@@ -1687,7 +1687,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0004                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0004                    */
      /* Retrieving member list ...                                  */
      /* ----------------------------------------------------------- */
 
@@ -1706,7 +1706,7 @@ srccssid=  "00273">
                 /*  -EOF-  */
 
      /* ----------------------------------------------------------- */
-     /*   Cmd-ADDMSGD für Message-ID :   FRS0005                    */
+     /*   Cmd-ADDMSGD f r Message-ID :   FRS0005                    */
      /* Searching                                                   */
      /* ----------------------------------------------------------- */
 
@@ -1740,61 +1740,61 @@ mbrtext =  "Prototypes for CEE APIs                  (include)"
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
- DEF  /IF NOT DEFINED(CEELIB)
- DEF  /DEFINE CEELIB
-      *
-      *  Test for Omitted Argument (CEETSTA) API
-     D CEETSTA...
-     D                 PR
-     D                                            extproc('CEETSTA')
-     D  io_isPresent                 10I 0
-     D  i_argNum                     10I 0 const
-     D  o_fc                         12A          options(*omit   )
-      *
-      *  Get String Information (CEEGSI) API
-     D CEEGSI...
-     D                 PR
-     D                                            extproc('CEEGSI')
-     D  i_posn                       10I 0 const
-     D  o_datatype                   10I 0
-     D  o_curlen                     10I 0
-     D  o_maxlen                     10I 0
-     D  o_fb                         12A          options(*omit   )
-      *
-      *  Reference fields for CEEGSI API
-     D strInf_t        DS                  based(pDummy)   qualified
-     D  datatype                     10I 0
-     D  curlen                       10I 0
-     D  maxlen                       10I 0
-      *
-      *  Register Activation Group Exit Procedure (CEE4RAGE) API
-     D CEE4RAGE...
-     D                 PR                  extproc('CEE4RAGE')
-     D  i_pProc                        *   const procptr
-     D   fc                          12A         options(*OMIT)
-      *
-      *  Logarithm base 10 (double float)
-     D CEESDLG1...
-     D                 PR                  extproc('CEESDLG1')
-     D  i_value                       8F   const
-     D  o_result                      8F
-      *
-      *  Register Call Stack Entry Termination User Exit Procedure (CEERTX)
-     D CEERTX...
-     D                 PR                         extproc('CEERTX')
-     D  i_procPtr                      *   const  procptr
-     D  i_rtxToken                     *   const  options(*omit)
-     D  o_fc                         12A          options(*omit)
-      *
-      *  Unregister Call Stack Entry Termination User Exit Procedure (CEEUTX)
-     D CEEUTX...
-     D                 PR                         extproc('CEEUTX')
-     D  i_procPtr                      *   const  procptr
-     D  o_fc                         12A          options(*omit)
-      *
- DEF  /ENDIF
+**free
+/if NOT defined(CEELIB)
+/define CEELIB
+
+//  Test for Omitted Argument (CEETSTA) API
+dcl-pr CEETSTA extproc('CEETSTA');
+  io_isPresent int(10);
+  i_argNum     int(10) const;
+  o_fc         char(12) options(*omit);
+end-pr;
+
+//  Get String Information (CEEGSI) API
+dcl-pr CEEGSI extproc('CEEGSI');
+  i_posn     int(10) const;
+  o_datatype int(10);
+  o_curlen   int(10);
+  o_maxlen   int(10);
+  o_fb       char(12) options(*omit);
+end-pr;
+
+//  Reference fields for CEEGSI API
+dcl-ds strInf_t based(pDummy) qualified;
+  datatype int(10);
+  curlen   int(10);
+  maxlen   int(10);
+end-ds;
+
+//  Register Activation Group Exit Procedure (CEE4RAGE) API
+dcl-pr CEE4RAGE extproc('CEE4RAGE');
+  i_pProc pointer(*proc) const;
+  fc      char(12) options(*omit);
+end-pr;
+
+//  Logarithm base 10 (double float)
+dcl-pr CEESDLG1 extproc('CEESDLG1');
+  i_value  float(8) const;
+  o_result float(8);
+end-pr;
+
+//  Register Call Stack Entry Termination User Exit Procedure (CEERTX)
+dcl-pr CEERTX extproc('CEERTX');
+  i_procPtr  pointer(*proc) const;
+  i_rtxToken pointer options(*omit) const;
+  o_fc       char(12) options(*omit);
+end-pr;
+
+//  Unregister Call Stack Entry Termination User Exit Procedure (CEEUTX)
+dcl-pr CEEUTX extproc('CEEUTX');
+  i_procPtr pointer(*proc) const;
+  o_fc      char(12) options(*omit);
+end-pr;
+
+/endif
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -1808,16 +1808,15 @@ mbrtext =  "Copyright information                             "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      /if not defined(COPYRIGHT_DSPEC)
-     h copyright('V1.2.1 - 09.02.2017 - mailto: thomas.raddatz@tools400.de')
-      /eof
-      /endif
-     D FNDRPLSTR_VERSION...
-     D                 C                   '1.2.1'
-     D FNDRPLSTR_DATE...
-     D                 C                   '09.02.2017'
+**free
+/if not defined(COPYRIGHT_DSPEC)
+ctl-opt copyright('V1.3 - 06.06.2026 - mailto: thomas.raddatz@tools400.de');
+/eof
+/endif
+dcl-c FNDRPLSTR_VERSION '1.3';
+dcl-c FNDRPLSTR_DATE '06.06.2026';
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -1831,21 +1830,23 @@ mbrtext =  "cpybk   : API error code                          "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      /IF NOT DEFINED(errCode_t )
-      /DEFINE errCode_t
-      *===============================================================*
-      *  API error code                                               *
-      *===============================================================*
-     D errCode_t       DS                  qualified           based(pDummy)
-     D  bytPrv                       10I 0
-     D  bytAvl                       10I 0
-     D  excID                         7A
-     D  reserved_1                    1A
-     D  excDta                      256A
-      *
-      /ENDIF
+**free
+/if NOT defined(errCode_t)
+/define errCode_t
+//===============================================================*
+//  API error code                                               *
+//===============================================================*
+dcl-ds errCode_t qualified based(pDummy);
+  bytPrv     int(10);
+  bytAvl     int(10);
+  excID      char(7);
+  reserved_1 char(1);
+  excDta     char(256);
+end-ds;
+
+/endif
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -1859,26 +1860,29 @@ mbrtext =  "cpybk   : Message                                 "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      /IF NOT DEFINED(msg_t     )
-      /DEFINE msg_t
-      * ============================================================= *
-      *   Message structure                                           *
-      * ============================================================= *
-      *
-     D msg_t           DS                  qualified           based(pDummy)
-     D  ID                                 likeds(msgID_t)
-     D  data                        512A
-     D  type                         10A
-     D  file                         10A
-     D  lib                          10A
-      *
-     D msgID_t         DS                  qualified           based(pDummy)
-     D  prefix                        3A
-     D  nbr                           4S 0
-      *
-      /ENDIF
+**free
+/if NOT defined(msg_t)
+/define msg_t
+// ============================================================= *
+//   Message structure                                           *
+// ============================================================= *
+
+dcl-ds msg_t qualified based(pDummy);
+  ID   likeds(msgID_t);
+  data char(512);
+  type char(10);
+  file char(10);
+  lib  char(10);
+end-ds;
+
+dcl-ds msgID_t qualified based(pDummy);
+  prefix char(3);
+  nbr    zoned(4);
+end-ds;
+
+/endif
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -1892,19 +1896,21 @@ mbrtext =  "cpybk   : Qualified object name                   "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      /IF NOT DEFINED(qObj_t    )
-      /DEFINE qObj_t
-      * ============================================================= *
-      *   Qualified object name                                       *
-      *===============================================================*
-      *
-     D qObj_t          DS                  qualified           based(pDummy)
-     D  name                         10A
-     D  lib                          10A
-      *
-      /ENDIF
+**free
+/if NOT defined(qObj_t)
+/define qObj_t
+// ============================================================= *
+//   Qualified object name                                       *
+//===============================================================*
+
+dcl-ds qObj_t qualified based(pDummy);
+  name char(10);
+  lib  char(10);
+end-ds;
+
+/endif
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -1918,7 +1924,7 @@ mbrtext =  "Find and Replace Strings - Eng                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
 .*=====================================================================*
 .*                                                                     *
@@ -1943,7 +1949,7 @@ srccssid=  "00273">
 .*=====================================================================*
 .*  History:                                                           *
 .*                                                                     *
-.*  Datum       Name          Änderung                                 *
+.*  Datum       Name           nderung                                 *
 .*  ----------  ------------  ---------------------------------------  *
 .*                                                                     *
 .*=====================================================================*
@@ -1971,7 +1977,7 @@ srccssid=  "00273">
 :IMHELP name='FNDRPLSTR/WILDCARD  '.
 :EHELP.
 .*--------------------------------------------------------------------
-.* Hilfetext für den Befehl
+.* Hilfetext f r den Befehl
 .*--------------------------------------------------------------------
 :HELP NAME='FNDRPLSTR'.
 Find and replace string (FNDRPLSTR) - Help
@@ -1983,7 +1989,7 @@ can be replace by a new value.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort FILE
+.* Hilfetext f r Schl sselwort FILE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/FILE      '.
 File - Help
@@ -2011,7 +2017,7 @@ for the file.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort MBR
+.* Hilfetext f r Schl sselwort MBR
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/MBR'.
 Member - Help
@@ -2034,7 +2040,7 @@ you want to search.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort VALUES
+.* Hilfetext f r Schl sselwort VALUES
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/VALUES'.
 Search and replace - Help
@@ -2079,7 +2085,7 @@ FNDRPLSTR FILE(*LIBL/QSRC)
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort CASE
+.* Hilfetext f r Schl sselwort CASE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/CASE'.
 Kind of match - Help
@@ -2101,7 +2107,7 @@ string.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort WILDCARD
+.* Hilfetext f r Schl sselwort WILDCARD
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/WILDCARD'.
 Wildcard character - Hilfe
@@ -2181,7 +2187,7 @@ mbrtext =  "Find and Replace Strings - Ger                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
 .*=====================================================================*
 .*                                                                     *
@@ -2206,7 +2212,7 @@ srccssid=  "00273">
 .*=====================================================================*
 .*  History:                                                           *
 .*                                                                     *
-.*  Datum       Name          Änderung                                 *
+.*  Datum       Name           nderung                                 *
 .*  ----------  ------------  ---------------------------------------  *
 .*                                                                     *
 .*=====================================================================*
@@ -2234,7 +2240,7 @@ srccssid=  "00273">
 :IMHELP name='FNDRPLSTR/WILDCARD  '.
 :EHELP.
 .*--------------------------------------------------------------------
-.* Hilfetext für den Befehl
+.* Hilfetext f r den Befehl
 .*--------------------------------------------------------------------
 :HELP NAME='FNDRPLSTR'.
 Zeichenkette suchen und ersetzen (FNDRPLSTR) - Hilfe
@@ -2245,14 +2251,14 @@ und ersetzt diese durch eine Ersetzungszeichenkette.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort FILE
+.* Hilfetext f r Schl sselwort FILE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/FILE      '.
 Datei - Hilfe
 :XH3.Datei (FILE)
 :P.
 Name der Datei, welche die zu durchsuchene
-Teildatei enthält.
+Teildatei enth lt.
 .*
 :IMHELP name='COM/REQPARM'.
 .*
@@ -2261,15 +2267,15 @@ Teildatei enthält.
 :PD.Name der Datei.
 .*
 :PT.:PK DEF.*LIBL:EPK.
-:PD.Datei wird über die Bibliotheksliste gesucht.
+:PD.Datei wird  ber die Bibliotheksliste gesucht.
 :PT.:PV.Bibliothek:EPV.
-:PD.Name der Bibliothek, welche die Datei enthält.
+:PD.Name der Bibliothek, welche die Datei enth lt.
 :EPARML.
 .*
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort MBR
+.* Hilfetext f r Schl sselwort MBR
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/MBR'.
 Teildatei - Hilfe
@@ -2293,7 +2299,7 @@ durchsuchen.
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort VALUES
+.* Hilfetext f r Schl sselwort VALUES
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/VALUES'.
 Suchen und ersetzen - Hilfe
@@ -2302,10 +2308,10 @@ Suchen und ersetzen - Hilfe
 Angeben, nach welcher Zeichenkette gesucht werden soll und durch
 welche Zeichenkette die gesuchte Zeichenfolge ersetzt werden soll.
 :P.
-Leere Zeichenketten, führende oder nachgestellte Leerzeichen können
-durch Anführungszeichen eingegeben, bzw. begrenzt werden.
+Leere Zeichenketten, f hrende oder nachgestellte Leerzeichen k nnen
+durch Anf hrungszeichen eingegeben, bzw. begrenzt werden.
 :P.
-Hexadezimalwerte können über x'...' eingegeben werden, z.B. x'55'.
+Hexadezimalwerte k nnen  ber x'...' eingegeben werden, z.B. x'55'.
 :P.
 :HP2.Suchzeichenkette.:EHP2. Angeben der Suchzeichenkette, nach der
 gesucht wird. Wenn die Suchzeichenkette gefunden wird, wird sie
@@ -2339,30 +2345,30 @@ FNDRPLSTR FILE(*LIBL/QSRC)
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort CASE
+.* Hilfetext f r Schl sselwort CASE
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/CASE'.
-Übereinstimmung (Groß/Klein) - Hilfe
-:XH3.Übereinstimmung (Groß/Klein) (CASE)
+ bereinstimmung (Gro /Klein) - Hilfe
+:XH3. bereinstimmung (Gro /Klein) (CASE)
 :P.
-Gibt die Art der Übereinstimmung der Schreibweise der
+Gibt die Art der  bereinstimmung der Schreibweise der
 Suchzeichenkette an.
 .*
 :IMHELP name='COM/OPTPARM'.
 .*
 :PARML.
 :PT.:PK DEF.*IGNORE:EPK.
-:PD.*IGNORE eingeben, um in der Teildatei unabhängig von
+:PD.*IGNORE eingeben, um in der Teildatei unabh ngig von
 der Schreibweise nach der Zeichenfolge zu suchen.
 :PT.:PV.*MATCH:EPV.
-:PD.*MATCH eingeben, um in der Teildatei abhängig von der
+:PD.*MATCH eingeben, um in der Teildatei abh ngig von der
 Schreibweise nach der Zeichenfolge zu suchen.
 :EPARML.
 .*
 :EHELP.
 .*
 .*--------------------------------------------------------------------
-.* Hilfetext für Schlüsselwort WILDCARD
+.* Hilfetext f r Schl sselwort WILDCARD
 .*--------------------------------------------------------------------
 :HELP name='FNDRPLSTR/WILDCARD'.
 Joker-Zeichen - Hilfe
@@ -2371,7 +2377,7 @@ Joker-Zeichen - Hilfe
 Definiert das bei der Suche oder beim Ersetzen verwendete
 Joker-Zeichen.
 :P.
-Während des Suchvorgangs markiert das Joker-Zeichen die Stellen
+W hrend des Suchvorgangs markiert das Joker-Zeichen die Stellen
 innerhalb der Suchzeichenfolge, die beim Vergleichen ignoriert
 werden sollen. So werden unter Angabe von :HP2.?aus:EHP2. auch die Begriffe
 :HP2.Haus:EHP2.,:HP2.Maus:EHP2. und :HP2.raus:EHP2. gefunden.
@@ -2389,7 +2395,7 @@ Joker-Zeichen auf :HP2.?:EHP2. zu setzen.
 :PT.:PK DEF.*NONE:EPK.
 :PD.*NONE eingeben, um kein Joker-Zeichen zuzulassen. Eine
 Zeichenfolge wird nur dann ersetzt, wenn sie mit der Suchzeichenkette
-übereinstimmt.
+ bereinstimmt.
 :PT.:PV.Joker-Zeichen:EPV.
 :PD.Spezifiziert das beim Suchen oder Ersetzen zu verwendende
 Joker-Zeichen.
@@ -2427,7 +2433,7 @@ Dieser Parameter ist optional.
 .*=====================================
 :HELP NAME='COM/VALUES'.
 :P.
-Mögliche Werte sind:
+M gliche Werte sind:
 :EHELP.
 .*
 :EPNLGRP.
@@ -2444,944 +2450,879 @@ mbrtext =  "Find and Replace Strings - CPP                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      *=====================================================================*
-      *  Author  :  Thomas Raddatz                                          *
-      *  Date    :  05.01.2004                                              *
-      *  E-mail  :  Thomas.Raddatz@Tools400.de                              *
-      *  Homepage:  www.tools400.de                                         *
-      *=====================================================================*
-      *                                                                     *
-      *  This software is free software, you can redistribute it and/or     *
-      *  modify it under the terms of the GNU General Public License (GPL)  *
-      *  as published by the Free Software Foundation.                      *
-      *                                                                     *
-      *  See GNU General Public License for details.                        *
-      *          http://www.opensource.org                                  *
-      *          http://www.opensource.org/licenses/gpl-license.html        *
-      *                                                                     *
-      *=====================================================================*
-      *  History:                                                           *
-      *                                                                     *
-      *  Datum       Name          Änderung                                 *
-      *  ----------  ------------  ---------------------------------------  *
-      *  16.12.2008  Th.Raddatz    Now ds_srcMbr.srcDta correctly starts    *
-      *                            at position 7.                           *
-      *                                                                     *
-      *=====================================================================*
-      *   >>PRE-COMPILER<<                                                  *
-      *     >>CRTCMD<<  CRTRPGMOD    MODULE(&LI/&OB) +                      *
-      *                              SRCFILE(&SL/&SF) +                     *
-      *                              SRCMBR(&SM);                           *
-      *     >>COMPILE<<                                                     *
-      *       >>PARM<< TRUNCNBR(*NO);                                       *
-      *       >>PARM<< DBGVIEW(*LIST);                                      *
-      *       >>PARM<< OPTION(*EVENTF);                                     *
-      *     >>END-COMPILE<<                                                 *
-      *     >>EXECUTE<<                                                     *
-      *     >>CMD<<     CRTPGM       PGM(&LI/FNDRPLSTR) +                   *
-      *                              MODULE(&LI/&OB       +                 *
-      *                                     &LI/PRGMTRR1) +                 *
-      *                              ENTMOD(&LI/&OB) +                      *
-      *                              ACTGRP(*NEW) +                         *
-      *                              BNDSRVPGM(*LIBL/RTVMBRL  +             *
-      *                                        *LIBL/BASICS1) +             *
-      *                              DETAIL(*BASIC);                        *
-      *   >>END-PRE-COMPILER<<                                              *
-      *=====================================================================*
-      /copy QFNDRPLSTR,H_SPEC
-      /copy QFNDRPLSTR,COPYRIGHT
-      *=====================================================================*
-     FFILE      UF   F32766        DISK    usropn
-     F                                     extfile(g_file    )
-     F                                     extmbr(g_mbr      )
-     F                                     infds(file_FB     )
-      *
-     D file_FB         DS                  likeds(file_FB_t  )
-      *
-     D g_file          S             21A   inz
-     D g_mbr           S                   inz    like(mbr_t     )
-      *
-     D ds_file         DS                  qualified
-     D  buffer                 1  32766A
-      *
-     D ds_srcMbr       DS                  qualified
-     D  srcSeq                 1      6S 2
-     D  srcDat                 7     12S 0
-     D  srcDta                13  32766A
-      *
-      *  Type Definitions
-     D bool_t          S               N   based(pDummy)
-     D int4_t          S             10I 0 based(pDummy)
-     D file_t          S             10A   based(pDummy)
-     D lib_t           S             10A   based(pDummy)
-     D mbr_t           S             10A   based(pDummy)
-     D string_t        S          32766A   based(pDummy)   varying
-     D keyword_t       S             10A   based(pDummy)
-     D varChar_t       S              1A   based(pDummy)   varying
-      *
-      /COPY QFNDRPLSTR,FDQOBJ                     Qualified object name
-      *
-      /COPY QBASICS1,PBASICS1                     Tools/400 Runtime Library
-      /COPY QFNDRPLSTR,PPRGMTRR1                  Progress Meter
-      /COPY QFNDRPLSTR,CEELIB                     CEE APIs
-      *
-     D mbrl0200_t      DS                  qualified             based(pDummy)
-     D  mbr                          10A
-     D  srcType                      10A
-     D  crtDatTim                    13A
-     D  cghDatTim                    13A
-     D  text                         50A
-     D  textCcsid                    10U 0
-      *
-     D fndRplStrL_t    DS                  qualified             based(pDummy)
-     D  numEntries                    5I 0
-     D  offsets                       5I 0                       dim(cNumValues)
-     D  entries                            likeds(entry_t    )   dim(cNumValues)
-      *
-     D entry_t         DS                  qualified             based(pDummy)
-     D  numValues                     5I 0
-     D  find                         25A   varying
-     D  replace                      25A   varying
-      *
-     D file_FB_t       DS           512    qualified   based(pDummy)
-     D  status                11     15P 0
-     D  msg                   46     52A
-     D  open_FB                            likeds(open_FB_t  )
-     D                                     overlay(file_FB_t:  81)
-     D  IO_FB                              likeds(IO_FB_t    )
-     D                                     overlay(file_FB_t: 241)
-     D  DB_IO_FB                           likeds(DB_IO_FB_t )
-     D                                     overlay(file_FB_t: 367)
-      *
-     D open_FB_t       DS                  qualified   based(pDummy)
-     D  odpType                1      2A
-     D  file                   3     12A
-     D  lib                   13     22A
-     D  splF                  23     32A
-     D  splFLib               33     42A
-     D  splFNbr               43     44I 0
-     D  maxRcdLength          45     46I 0
-     D  maxKeyLength          47     48I 0
-     D  mbr                   49     58A
-     D  res_01                59     62I 0
-     D  res_02                63     66I 0
-     D  fileType              67     68I 0
-     D  res_03                69     71A
-     D  numRcdAtOpn           76     79U 0
-     D  srcFileInd            83     83A
-      *
-     D IO_FB_t         DS                  qualified   based(pDummy)
-     D  writeCount             3      6I 0
-     D  readCount              7     10I 0
-     D  wrRdCount             11     14I 0
-     D  otherCount            15     18I 0
-     D  res_01                19     19A
-     D  currOper              20     20A
-     D  rcdFormat             21     30A
-     D  deviceClass           31     32A
-     D  deviceName            33     42A
-     D  lastRcdLenPrc         43     46I 0
-     D  res_02                47    126A
-     D  rdBlkSize            127    128I 0
-     D  curBlkCount          133    136I 0
-      *
-     D DB_IO_FB_t      DS                  qualified   based(pDummy)
-     D  numLckRcd             11     12I 0
-     D  maxNumFld             13     14I 0
-     D  numKeyFld             21     22I 0
-     D  keyLength             27     28I 0
-     D  dataMbrNbr            29     30I 0
-     D  rrn                   31     34U 0
-      *
-      *  Prototype for the RTVMBRL service program
-      /COPY QRTVMBRL,PRTVMBRL
-      *
-      *  Prototypes for Program Entry Point
-     D PGM_ENTRY_POINT...
-     D                 PR                  extpgm('FNDRPLR1')
-     D  gi_qFile                           const  like(qObj_t         )
-     D  gi_mbr                             const  like(mbr_t          )
-     D  gi_fndRplStrL                      const  likeds(fndRplStrL_t )
-     D  gi_case                            const  like(keyword_t      )
-     D  gi_wildcard                        const  like(varChar_t      )
-      *
-      *  Prototypes for internal procedures
-     D main...
-     D                 PR
-     D  i_qFile                            const  like(gi_qFile       )
-     D  i_mbr                              const  like(gi_mbr         )
-     D  i_fndRplStrL                       const  likeds(gi_fndRplStrL)
-     D  i_case                             const  like(gi_case        )
-     D  i_wildcard                         const  like(gi_wildcard    )
-      *
-     D processMbr...
-     D                 PR
-     D  i_file                             value  like(file_t         )
-     D  i_lib                              value  like(lib_t          )
-     D  i_mbr                              value  like(mbr_t          )
-     D  i_fndRplStrL                       value  likeds(fndRplStrL_t )
-     D  i_case                             value  like(keyword_t      )
-     D  i_wildcard                         value  like(varChar_t      )
-      *
-     D replaceString...
-     D                 PR                         like(string_t  )
-     D  o_numChanges                              like(int4_t    )
-     D  i_searchArg                        const  like(string_t  )
-     D  i_rplString                        const  like(string_t  )
-     D  i_string                           const  like(string_t  )
-     D  i_case                             const  like(keyword_t )
-     D  i_wildcard                         const  like(varChar_t )
-     D                                            options(*nopass)
-     D  i_startPos                         const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_endPos                           const  like(int4_t    )
-     D                                            options(*nopass)
-      *
-     D scan...
-     D                 PR                         like(int4_t    )
-     D  i_searchArg                        const  like(string_t  )
-     D  i_string                           const  like(string_t  )
-     D  i_startPos                         const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_wildcard                         const  like(varChar_t )
-     D                                            options(*nopass)
-      *
-     D replace...
-     D                 PR                         like(string_t  )
-     D  i_rplString                        const  like(string_t  )
-     D  i_string                           const  like(string_t  )
-     D  i_startPos                         const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_length                           const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_wildcard                         const  like(varChar_t )
-     D                                            options(*nopass)
-      *
-     D isGeneric...
-     D                 PR                         like(bool_t    )
-     D  i_string                           const  like(string_t  )
-      *
-     D rmvMsgByIDAndType...
-     D                 PR
-     D i_msgType                           const  like(msg_t.type)
-     D i_msgID                             const  like(msg_t.ID  )
-      *
-      *  Create new message.
-     D newAppMsg...
-     D                 PR                         like(msg_t     )
-     D  i_msgID                            const  like(msg_t.ID  )
-     D                                            options(*nopass: *omit)
-     D  i_msgData                          const  like(msg_t.data)
-     D                                            options(*nopass: *omit)
-     D  i_msgType                          const  like(msg_t.type)
-     D                                            options(*nopass: *omit)
-      *
-      *  Global Constants
-     D cNumValues      C                   const(10)
-     D cDblQuotes      C                   const('"')
-      *
-     D cSrcFile_ind_Yes...
-     D                 C                   const('Y')
-     D cSrcFile_ind_No...
-     D                 C                   const('N')
-      *
-     D cMbr_First      C                   const('*FIRST')
-     D cMbr_All        C                   const('*ALL')
-      *
-     D cIgnore         C                   const('*IGNORE')
-     D cMatch          C                   const('*MATCH')
-      *
-     D cAppMsgF        C                   const('FNDRPLSTR')
-     D cAppMsgFLib     C                   const('*LIBL')
-      *
-      ********************************************************************
-      *  Program Entry Point
-      ********************************************************************
-      *
-     D PGM_ENTRY_POINT...
-     D                 PI
-     D  gi_qFile                           const  like(qObj_t         )
-     D  gi_mbr                             const  like(mbr_t          )
-     D  gi_fndRplStrL                      const  likeds(fndRplStrL_t )
-     D  gi_case                            const  like(keyword_t      )
-     D  gi_wildcard                        const  like(varChar_t      )
-      *-------------------------------------------------------------------
-      /FREE
-
-         main(gi_qFile: gi_mbr: gi_fndRplStrL: gi_case: gi_wildcard);
-
-         *inlr = *on;
-
-      /END-FREE
-      *
-      *==================================================================*
-      *  Main Procedure
-      *==================================================================*
-      *
-     P main...
-     P                 B
-      *
-     D main...
-     D                 PI
-     D  i_qFile                            const  like(gi_qFile       )
-     D  i_mbr                              const  like(gi_mbr         )
-     D  i_fndRplStrL                       const  likeds(gi_fndRplStrL)
-     D  i_case                             const  like(gi_case        )
-     D  i_wildcard                         const  like(gi_wildcard    )
-      *
-      *  Local fields
-     D isMbr           S                   like(bool_t         ) inz(cFalse)
-     D hMbrList        S                   like(mbrLst_handle_t) inz
-      *
-     D msg             S                   like(msg_t          ) inz
-     D qFile           DS                  likeds(qObj_t       ) inz
-     D mbrl0200        DS                  likeds(mbrl0200_t   ) inz
-     D mbrl0200_hlp    S                   like(mbrl0200       )
-     D                                     based(pMbrl0200_hlp )
-     D pMbrl0200_hlp   S               *   inz(%addr(mbrl0200  ))
-      *
-      *  Messages
-      /COPY QFNDRPLSTR,FRS0004
-      *-------------------------------------------------------------------
-      /FREE
-
-         qFile = i_qFile;
-
-         // If the member name is *FIRST and not a generic value ...
-         // (Since special values are also treated as "generic" values
-         //  we have to exclude *FIRST from that.)
-         if   (i_mbr = cMbr_First) or (not isGeneric(i_mbr));
-            // ... then process the member
-            processMbr(qFile.name: qFile.lib:
-                       i_mbr: i_fndRplStrL: i_case: i_wildcard);
-         else;
-            // ... else retrieve member list and process each member
-            clear   FRS0004;
-            msg = newAppMsg('FRS0004': FRS0004: cMsg_Status);
-            f_sndPgmMsg(msg: cMsg_Ext);
-
-            if   not f_opnMbrLst(qFile.name: qFile.lib:
-                                 i_mbr: '*NAME': hMbrList: msg);
-               f_sndPgmMsg(msg: cMsg_Prv: cMsg_ToCtlBdy);
-            else;
-               isMbr = f_getFirstMbr(hMbrList: mbrl0200_hlp);
-
-               dow   isMbr;
-                  processMbr(qFile.name: qFile.lib:
-                             mbrl0200.mbr: i_fndRplStrL: i_case: i_wildcard);
-                  isMbr = f_getNextMbr(hMbrList: mbrl0200_hlp);
-               enddo;
-
-               f_cloMbrLst(hMbrList);
-
-            endif;
-         endif;
-
-         return;
-
-      /END-FREE
-      *
-     P main...
-     P                 E
-      *
-      *==================================================================*
-      *  Process Member
-      *==================================================================*
-      *
-     P processMbr...
-     P                 B
-      *
-     D processMbr...
-     D                 PI
-     D  i_file                             value  like(file_t         )
-     D  i_lib                              value  like(lib_t          )
-     D  i_mbr                              value  like(mbr_t          )
-     D  i_fndRplStrL                       value  likeds(fndRplStrL_t )
-     D  i_case                             value  like(keyword_t      )
-     D  i_wildcard                         value  like(varChar_t      )
-      *
-      *  Local fields
-     D isError         S                   like(bool_t    ) inz(cFalse)
-     D isDone          S                   like(bool_t    ) inz(cFalse)
-     D isChanged       S                   like(bool_t    ) inz(cFalse)
-     D isProgressMeter...
-     D                 S                   like(bool_t    ) inz(cFalse)
-     D x               S                   like(int4_t    ) inz
-     D numChanges      S                   like(int4_t    ) inz
-     D sumChanges      S                   like(int4_t    ) inz
-     D numRcdPrc       S                   like(int4_t    ) inz
-      *
-     D msg             DS                  likeds(msg_t        ) inz
-     D fndRplStrL      DS                  likeds(fndRplStrL_t ) inz
-     D entry           DS                  likeds(entry_t      ) based(pEntry)
-      *
-      *  Messages
-      /COPY QFNDRPLSTR,FRS0001
-      /COPY QFNDRPLSTR,FRS0002
-      /COPY QFNDRPLSTR,FRS0003
-      /COPY QFNDRPLSTR,FRS0005
-      *-------------------------------------------------------------------
-      /FREE
-
-         fndRplStrL = i_fndRplStrL;
-
-         // Open file
-         g_file = %trim(i_lib) + '/' + %trim(i_file);
-         g_mbr  = i_mbr;
-
-         open   file;
-         rmvMsgByIDAndType(cMsg_Diag: 'CPF4011');   // Buffer length longer than record ...
-
-         // Decide whether to use the progress meter or a static message
-         if   file_FB.open_FB.numRcdAtOpn >= 10000;
-            isProgressMeter = cTrue;
-         else;
-            isProgressMeter = cFalse;
-         endif;
-
-         // If the progress meter has to be shown ...
-         if   isProgressMeter;
-            // ... then initialize progress meter
-            msg = newAppMsg('FRS0005': FRS0005: cMsg_Info);
-            p_inzProgressMeter(f_rtvMsgText(msg) + ' ' +
-                               %trimR(file_FB.open_FB.mbr) + ':'  :
-                               file_FB.open_FB.numRcdAtOpn:
-                               cPrgMtr_Blue: 1: cPrgMtr_JobType_Dlg);
-         else;
-            // ... else send static information message
-            clear   FRS0001;
-            FRS00011 = i_mbr;
-            msg = newAppMsg('FRS0001': FRS0001: cMsg_Status);
-            f_sndPgmMsg(msg: cMsg_Ext);
-         endif;
-
-         // Process file member
-         dou   isError or isDone;
-            if   file_FB.open_FB.srcFileInd = cSrcFile_ind_Yes;
-               if   file_FB.open_FB.maxRcdLength > %size(ds_srcMbr);
-                  isError = cTrue;
-                  leave;
-               endif;
-            else;
-               if   file_FB.open_FB.maxRcdLength > %size(ds_file);
-                  isError = cTrue;
-                  leave;
-               endif;
-            endif;
-
-            // Spin through (source) member
-            numRcdPrc = 0;
-
-            setll   1   file;
-            dow   %found(file);
-               if   file_FB.open_FB.srcFileInd = cSRCFILE_IND_YES;
-                  read   file   ds_srcMbr;
-               else;
-                  read   file   ds_file;
-               endif;
-               if   %eof(file);
-                  leave;
-               endif;
-
-               // Show progress meter
-               if   isProgressMeter;
-                  numRcdPrc = numRcdPrc + 1;
-                  p_showProgressMeter(numRcdPrc);
-               endif;
-
-               // Spin through search & replace string list
-               isChanged = cFalse;
-               for   x = 1 to fndRplStrL.numEntries;
-                  pEntry = %addr(fndRplStrL) + fndRplStrL.offsets(x);
-                  if   %len(entry.find) > 0;
-                     if   file_FB.open_FB.srcFileInd = cSRCFILE_IND_YES;
-                        ds_srcMbr.srcDta = replaceString(
-                                                  numChanges                 :
-                                                  f_rmvQuotes(entry.find
-                                                              : cDblQuotes)  :
-                                                  f_rmvQuotes(entry.replace
-                                                              : cDblQuotes)  :
-                                                  ds_srcMbr.srcDta           :
-                                                  i_case                     :
-                                                  i_wildcard                 );
-                     else;
-                        ds_file.buffer = replaceString(
-                                                  numChanges                 :
-                                                  f_rmvQuotes(entry.find
-                                                              : cDblQuotes)  :
-                                                  f_rmvQuotes(entry.replace
-                                                              : cDblQuotes)  :
-                                                  ds_file.buffer             :
-                                                  i_case                     :
-                                                  i_wildcard                 );
-                     endif;
-                     if   numChanges > 0;
-                        sumChanges = sumChanges + numChanges;
-                        isChanged  = cTrue;
-                     endif;
-                  endif;
-               endfor;
-
-                  if   isChanged;
-                     if   file_FB.open_FB.srcFileInd = cSRCFILE_IND_YES;
-                        update   file   ds_srcMbr;
-                     else;
-                        update   file   ds_file;
-                     endif;
-                  else;
-                     unlock   file;
-                  endif;
-            enddo;
-
-            isDone = cTrue;
-         enddo;
-
-         // Close file
-         if   %open(file);
-            close   file;
-         endif;
-
-         // Send completion message
-         if   sumChanges > 0;
-            clear   FRS0002;
-            FRS00021 = sumChanges;
-            FRS00022 = i_mbr;
-            FRS00023 = i_file;
-            FRS00024 = i_lib;
-            msg = newAppMsg('FRS0002': FRS0002: cMsg_Info);
-            f_sndPgmMsg(msg: cMsg_Prv: cMsg_ToCtlBdy);
-         else;
-            clear   FRS0003;
-            FRS00031 = 0;
-            FRS00032 = i_mbr;
-            FRS00033 = i_file;
-            FRS00034 = i_lib;
-            msg = newAppMsg('FRS0003': FRS0003: cMsg_Info);
-            f_sndPgmMsg(msg: cMsg_Prv: cMsg_ToCtlBdy);
-         endif;
-
-         return;
-
-      /END-FREE
-      *
-     P processMbr...
-     P                 E
-      *
-      *=========================================================================
-      *  Replaces all occurences of a search argument by
-      *  a replacement string in a given string.
-      *=========================================================================
-      *  Parameters:
-      *   i_searchArg   - The argument that is replaced by the replacement
-      *                   string.
-      *   i_rplString   - The replacement string that replaces the search
-      *                   argument.
-      *   i_string      - The string that contains the search argument.
-      *   i_case        - Kind of match:  *IGNORE - Search string without
-      *                                             case sensitivity.
-      *                                   *MATCH  - Search for an exact match
-      *                                             to the string.
-      *   i_startPos    - The position where to start from.
-      *   i_endPos      - Last position to find the search argument.
-      *
-      *  Returns:
-      *   string        - The string having the search argument replaced with
-      *                   the replacement string.
-      *=========================================================================
-      *
-     P replaceString...
-     P                 B
-      *
-     D replaceString...
-     D                 PI                         like(string_t  )
-     D  o_numChanges                              like(int4_t    )
-     D  i_searchArg                        const  like(string_t  )
-     D  i_rplString                        const  like(string_t  )
-     D  i_string                           const  like(string_t  )
-     D  i_case                             const  like(keyword_t )
-     D  i_wildcard                         const  like(varChar_t )
-     D                                            options(*nopass)
-     D  i_startPos                         const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_endPos                           const  like(int4_t    )
-     D                                            options(*nopass)
-      *
-      *  Return value
-     D string          S                   like(string_t  ) inz
-      *
-      *  Parameter positions
-     D p_wildcard      C                   const(6)
-     D p_startPos      C                   const(7)
-     D p_endPos        C                   const(8)
-      *
-      *  Optional parameter fields
-     D startPos        S                   like(i_startPos) inz
-     D endPos          S                   like(i_endPos  ) inz
-     D wildcard        S                   like(i_wildcard) inz
-      *
-      *  Local fields
-     D X               S                   like(int4_t    ) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      /FREE
-
-         o_numChanges = 0;
-
-         if   %parms >= p_wildcard;
-            wildcard = i_wildcard;
-         else;
-            wildcard = '';
-         endif;
-
-         if   %parms >= p_startPos;
-            startPos = i_startPos;
-         else;
-            startPos = 1;
-         endif;
-
-         if   %parms >= p_endPos;
-            endPos = i_endPos;
-         else;
-            endPos = %len(i_string);
-         endif;
-
-         string = i_string;
-
-         if   i_case = cIgnore;
-            x = scan(f_lcase(i_searchArg)
-                     : f_lcase(string): startPos: wildcard);
-         else;
-            x = scan(i_searchArg: string: startPos: wildcard);
-         endif;
-
-         dow   (x > 0) and (x < endPos);
-            o_numChanges = o_numChanges + 1;
-            string = replace(i_rplString
-                             : string: x: %len(i_searchArg): wildcard);
-            x = x + %len(i_rplString);
-            if   x < %len(string);
-               if   i_case = cIgnore;
-                  x = scan(f_lcase(i_searchArg)
-                           : f_lcase(string): x: wildcard);
-               else;
-                  x = scan(i_searchArg: string: x: wildcard);
-               endif;
-            endif;
-         enddo;
-
-         return   string;
-
-      /END-FREE
-      *
-     P replaceString...
-     P                 E
-      *
-      *=========================================================================
-      *  Returns the first position of the search argument in the source
-      *  string, or 0 if it was not found.
-      *=========================================================================
-      *  Parameters:
-      *   i_searchArg   - The argument that is replaced by the replacement
-      *                   string.
-      *   i_string      - The string that contains the search argument.
-      *   i_startPos    - The position where to start from.
-      *   i_wildcard    - The wildcard character.
-      *
-      *  Returns:
-      *   pos           - The first position of the search argument
-      *                   in the source.
-      *=========================================================================
-      *
-     P scan...
-     P                 B
-      *
-     D scan...
-     D                 PI                         like(int4_t    )
-     D  i_searchArg                        const  like(string_t  )
-     D  i_string                           const  like(string_t  )
-     D  i_startPos                         const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_wildcard                         const  like(varChar_t )
-     D                                            options(*nopass)
-      *
-      *  Parameter positions
-     D p_startPos      C                   const(3)
-     D p_wildcard      C                   const(4)
-      *
-      *  Optional parameter fields
-     D startPos        S                   like(i_startPos) inz
-     D wildcard        S                   like(i_wildcard) inz
-      *
-      *  Return value
-     D pos             S                   like(int4_t    ) inz
-      *
-      *  Local fields
-     D x               S                   like(int4_t    ) inz
-     D y               S                   like(int4_t    ) inz
-     D match           S                   like(int4_t    ) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      /FREE
-
-         if (%parms() >= p_startPos);
-            startPos = i_startPos;
-         else;
-            startPos = 1;
-         endif;
-
-         if (%parms() >= p_wildcard);
-            wildcard = i_wildcard;
-         else;
-            wildcard = '';
-         endif;
-
-         if (wildcard = '');
-            pos = %scan(i_searchArg: i_string: startPos);
-            return pos;
-         endif;
-
-         match = 0;
-         for x = 1 to (%len(i_string) - %len(i_searchArg) + 1);
-            match = 0;
-            for y = 1 to %len(i_searchArg);
-               if (%subst(i_searchArg: y: 1) <> wildcard and
-                   %subst(i_string: x+y-1: 1) <> %subst(i_searchArg: y: 1));
-                  leave;
-               endif;
-               match = match + 1;
-               if (match = %len(i_searchArg));
-                  pos = x;
-                  return pos;
-               endif;
-            endfor;
-         endfor;
-
-         return pos;
-
-      /END-FREE
-      *
-     P scan...
-     P                 E
-      *
-      *=========================================================================
-      *  Returns the character string produced by inserting a replacement string
-      *  into the source string, starting at the start position and replacing
-      *  the specified number of characters.
-      *=========================================================================
-      *  Parameters:
-      *   i_rplString   - The replacement string.
-      *   i_string      - The source string.
-      *   i_startPos    - The position where to start from.
-      *   i_length      - The length of the string that is replaced.
-      *   i_wildcard    - The wildcard character.
-      *
-      *  Returns:
-      *   pos           - The first position of the search argument
-      *                   in the source.
-      *=========================================================================
-      *
-     P replace...
-     P                 B
-      *
-     D replace...
-     D                 PI                         like(string_t  )
-     D  i_rplString                        const  like(string_t  )
-     D  i_string                           const  like(string_t  )
-     D  i_startPos                         const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_length                           const  like(int4_t    )
-     D                                            options(*nopass)
-     D  i_wildcard                         const  like(varChar_t )
-     D                                            options(*nopass)
-      *
-      *  Parameter positions
-     D p_startPos      C                   const(3)
-     D p_length        C                   const(4)
-     D p_wildcard      C                   const(5)
-      *
-      *  Optional parameter fields
-     D startPos        S                   like(i_startPos ) inz
-     D length          S                   like(i_length   ) inz
-     D wildcard        S                   like(i_wildcard ) inz
-      *
-      *  Return value
-     D newString       S                   like(string_t   ) inz
-      *
-      *  Local fields
-     D x               S                   like(int4_t     ) inz
-     D rplString       S                   like(i_rplString) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      /FREE
-
-         if (%parms() >= p_startPos);
-            startPos = i_startPos;
-         else;
-            startPos = 1;
-         endif;
-
-         if (%parms() >= p_length);
-            length = i_length;
-         else;
-            length = %len(i_rplString);
-         endif;
-
-         if (%parms() >= p_wildcard);
-            wildcard = i_wildcard;
-         else;
-            wildcard = '';
-         endif;
-
-         if (wildcard = '');
-            newString = %replace(i_rplString: i_string: startPos: length);
-            return newString;
-         endif;
-
-         rplString = i_rplString;
-
-         x = 1;
-         dow (x <= %len(i_rplString));
-            if (%subst(i_rplString: x: 1) = wildcard);
-               %subst(rplString: x: 1) = %subst(i_string: startPos + x - 1: 1);
-            endif;
-            x = x + 1;
-         enddo;
-
-         newString = %replace(rplString: i_string: startPos: length);
-
-         return newString;
-
-      /END-FREE
-      *
-     P replace...
-     P                 E
-      *
-      *=========================================================================
-      *  Is generic?
-      *=========================================================================
-      *
-     P isGeneric...
-     P                 B
-      *
-     D isGeneric...
-     D                 PI                         like(bool_t    )
-     D  i_string                           const  like(string_t  )
-      *
-      *  Return value
-     D isGeneric       S                   like(bool_t    ) inz(cFalse)
-      *
-      *  Local fields
-     D string          S                   like(i_string  ) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      /FREE
-
-         string = %trim(i_string);
-
-         if   (%subst(string: 1: 1)            = '*') or
-              (%subst(string: %len(string): 1) = '*');
-            isGeneric = cTrue;
-         else;
-            isGeneric = cFalse;
-         endif;
-
-         return   isGeneric;
-
-      /END-FREE
-      *
-     P isGeneric...
-     P                 E
-      *
-      *======================================================================================
-      *  Remove last message.
-      *
-      * Erzeugt mit PRC-Template V1.1 (Zeile bitte nicht löschen)
-      *======================================================================================
-     P rmvMsgByIDAndType...
-     P                 B
-      *
-     D rmvMsgByIDAndType...
-     D                 PI
-     D i_msgType                           const  like(msg_t.type)
-     D i_msgID                             const  like(msg_t.ID  )
-      *
-      * Local helper fields
-     D rcvm0200        DS                  likeds(rcvm0200_t) inz
-     D msg             DS                  likeds(msg_t     ) inz
-      * ---------------------------------------------------------
-      /FREE
-
-         // empfangen letzte *ESCAPE Nachricht
-         rcvm0200 = f_rcvPgmMsg(cMsg_Diag: *omit: cMsg_Act_Same: 0:
-                                cMsg_Prv: cMsg_ToMyself: *omit: *omit: msg);
-
-         // löschen Nachrichten
-         if (msg.ID = cMSG_ID_OK);
-            if (i_msgID = rcvm0200.msgID) or (i_msgID = '');
-               p_rmvPgmMsg(cMsg_Rmv_ByKey: rcvm0200.msgKey
-                           : cMsg_Prv: cMsg_ToMyself);
-            endif;
-         endif;
-
-         return;
-
-      /END-FREE
-      *
-     P rmvMsgByIDAndType...
-     P                 E
-      *
-      *===============================================================*
-      *  Create new message.
-      *===============================================================*
-     P newAppMsg...
-     P                 B
-      *
-     D newAppMsg...
-     D                 PI                         like(msg_t     )
-     D  i_msgID                            const  like(msg_t.ID  )
-     D                                            options(*nopass: *omit)
-     D  i_msgData                          const  like(msg_t.data)
-     D                                            options(*nopass: *omit)
-     D  i_msgType                          const  like(msg_t.type)
-     D                                            options(*nopass: *omit)
-      *
-      *  Return value
-     D msg             DS                  likeds(msg_t   ) inz
-      *
-      *  Parameter positions
-     D p_msgID         C                   const(1)
-     D p_msgData       C                   const(2)
-     D p_msgType       C                   const(3)
-      *
-      *  Optional parameter fields
-     D msgID           S                   like(i_msgID   ) inz
-     D msgData         S                   like(i_msgData ) inz
-     D msgType         S                   like(i_msgType ) inz
-      *
-      *  Hilfsfelder für System-API: CEETSTA
-     D isPresent       S                   like(int4_t    ) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      /FREE
-
-         select;
-         when (%parms() >= p_msgType);   // 3 or more parameters
-            msg = f_newMsg(i_msgID: i_msgData: i_msgType: cAppMsgF:cAppMsgFLib);
-
-         when (%parms() = p_msgData);    // 2 parameters
-            msg = f_newMsg(i_msgID: i_msgData: *omit: cAppMsgF: cAppMsgFLib);
-
-         when (%parms() = p_msgID);      // 1 parameter
-            msg = f_newMsg(i_msgID: *omit: *omit: cAppMsgF: cAppMsgFLib);
-
-         other;                          // no parameters
-            msg = f_newMsg(*omit: *omit: *omit: cAppMsgF: cAppMsgFLib);
-         endsl;
-
-         return msg;
-
-      /END-FREE
-      *
-     P newAppMsg...
-     P                 E
-      *
+**free
+//=====================================================================*
+//  Author  :  Thomas Raddatz                                          *
+//  Date    :  05.01.2004                                              *
+//  E-mail  :  Thomas.Raddatz@Tools400.de                              *
+//  Homepage:  www.tools400.de                                         *
+//=====================================================================*
+//                                                                     *
+//  This software is free software, you can redistribute it and/or     *
+//  modify it under the terms of the GNU General Public License (GPL)  *
+//  as published by the Free Software Foundation.                      *
+//                                                                     *
+//  See GNU General Public License for details.                        *
+//          http://www.opensource.org                                  *
+//          http://www.opensource.org/licenses/gpl-license.html        *
+//                                                                     *
+//=====================================================================*
+//  History:                                                           *
+//                                                                     *
+//  Datum       Name           nderung                                 *
+//  ----------  ------------  ---------------------------------------  *
+//  16.12.2008  Th.Raddatz    Now ds_srcMbr.srcDta correctly starts    *
+//                            at position 7.                           *
+//                                                                     *
+//=====================================================================*
+//   >>PRE-COMPILER<<                                                  *
+//     >>CRTCMD<<  CRTRPGMOD    MODULE(&LI/&OB) +                      *
+//                              SRCFILE(&SL/&SF) +                     *
+//                              SRCMBR(&SM);                           *
+//     >>COMPILE<<                                                     *
+//       >>PARM<< TRUNCNBR(*NO);                                       *
+//       >>PARM<< DBGVIEW(*LIST);                                      *
+//       >>PARM<< OPTION(*EVENTF);                                     *
+//     >>END-COMPILE<<                                                 *
+//     >>EXECUTE<<                                                     *
+//     >>CMD<<     CRTPGM       PGM(&LI/FNDRPLSTR) +                   *
+//                              MODULE(&LI/&OB       +                 *
+//                                     &LI/PRGMTRR1) +                 *
+//                              ENTMOD(&LI/&OB) +                      *
+//                              ACTGRP(*NEW) +                         *
+//                              BNDSRVPGM(*LIBL/RTVMBRL  +             *
+//                                        *LIBL/BASICS1) +             *
+//                              DETAIL(*BASIC);                        *
+//   >>END-PRE-COMPILER<<                                              *
+//=====================================================================*
+/copy QFNDRPLSTR,H_SPEC
+/copy QFNDRPLSTR,COPYRIGHT
+//=====================================================================*
+dcl-f FILE disk(32766) usage(*update: *delete) usropn extfile(g_file) extmbr(g_mbr) infds(file_FB);
+
+dcl-ds file_FB likeds(file_FB_t);
+
+dcl-s g_file char(21) inz;
+dcl-s g_mbr inz like(mbr_t);
+
+dcl-ds ds_file qualified;
+  buffer char(32766);
+end-ds;
+
+dcl-ds ds_srcMbr qualified;
+  srcSeq zoned(6: 2);
+  srcDat zoned(6);
+  srcDta char(32754);
+end-ds;
+
+//  Type Definitions
+dcl-s bool_t ind based(pDummy);
+dcl-s int4_t int(10) based(pDummy);
+dcl-s file_t char(10) based(pDummy);
+dcl-s lib_t char(10) based(pDummy);
+dcl-s mbr_t char(10) based(pDummy);
+dcl-s string_t varchar(32766) based(pDummy);
+dcl-s keyword_t char(10) based(pDummy);
+dcl-s varChar_t varchar(1) based(pDummy);
+
+/copy QFNDRPLSTR,FDQOBJ qualified object name
+
+/copy QBASICS1,PBASICS1 Tools/400 Runtime Library
+/copy QFNDRPLSTR,PPRGMTRR1 Progress Meter
+/copy QFNDRPLSTR,CEELIB CEE APIs
+
+dcl-ds mbrl0200_t qualified based(pDummy);
+  mbr       char(10);
+  srcType   char(10);
+  crtDatTim char(13);
+  cghDatTim char(13);
+  text      char(50);
+  textCcsid uns(10);
+end-ds;
+
+dcl-ds fndRplStrL_t qualified based(pDummy);
+  numEntries int(5);
+  offsets    int(5) dim(cNumValues);
+  entries    likeds(entry_t) dim(cNumValues);
+end-ds;
+
+dcl-ds entry_t qualified based(pDummy);
+  numValues int(5);
+  find      varchar(25);
+  replace   varchar(25);
+end-ds;
+
+dcl-ds file_FB_t len(512) qualified based(pDummy);
+  status   packed(9) pos(11);
+  msg      char(7) pos(46);
+  open_FB  likeds(open_FB_t) pos(81);
+  IO_FB    likeds(IO_FB_t) pos(241);
+  DB_IO_FB likeds(DB_IO_FB_t) pos(367);
+end-ds;
+
+dcl-ds open_FB_t qualified based(pDummy);
+  odpType      char(2);
+  file         char(10);
+  lib          char(10);
+  splF         char(10);
+  splFLib      char(10);
+  splFNbr      int(5);
+  maxRcdLength int(5);
+  maxKeyLength int(5);
+  mbr          char(10);
+  res_01       int(10);
+  res_02       int(10);
+  fileType     int(5);
+  res_03       char(3);
+  numRcdAtOpn  uns(10) pos(76);
+  srcFileInd   char(1) pos(83);
+end-ds;
+
+dcl-ds IO_FB_t qualified based(pDummy);
+  writeCount    int(10) pos(3);
+  readCount     int(10);
+  wrRdCount     int(10);
+  otherCount    int(10);
+  res_01        char(1);
+  currOper      char(1);
+  rcdFormat     char(10);
+  deviceClass   char(2);
+  deviceName    char(10);
+  lastRcdLenPrc int(10);
+  res_02        char(80);
+  rdBlkSize     int(5);
+  curBlkCount   int(10) pos(133);
+end-ds;
+
+dcl-ds DB_IO_FB_t qualified based(pDummy);
+  numLckRcd  int(5) pos(11);
+  maxNumFld  int(5);
+  numKeyFld  int(5) pos(21);
+  keyLength  int(5) pos(27);
+  dataMbrNbr int(5);
+  rrn        uns(10);
+end-ds;
+
+//  Prototype for the RTVMBRL service program
+/copy QRTVMBRL,PRTVMBRL
+
+//  Prototypes for Program Entry Point
+dcl-pr PGM_ENTRY_POINT extpgm('FNDRPLR1');
+  gi_qFile      like(qObj_t) const;
+  gi_mbr        like(mbr_t) const;
+  gi_fndRplStrL likeds(fndRplStrL_t) const;
+  gi_case       like(keyword_t) const;
+  gi_wildcard   like(varChar_t) const;
+end-pr;
+
+//  Prototypes for internal procedures
+dcl-pr main;
+  i_qFile      like(gi_qFile) const;
+  i_mbr        like(gi_mbr) const;
+  i_fndRplStrL likeds(gi_fndRplStrL) const;
+  i_case       like(gi_case) const;
+  i_wildcard   like(gi_wildcard) const;
+end-pr;
+
+dcl-pr processMbr;
+  i_file       like(file_t) value;
+  i_lib        like(lib_t) value;
+  i_mbr        like(mbr_t) value;
+  i_fndRplStrL likeds(fndRplStrL_t) value;
+  i_case       like(keyword_t) value;
+  i_wildcard   like(varChar_t) value;
+end-pr;
+
+dcl-pr replaceString like(string_t);
+  o_numChanges like(int4_t);
+  i_searchArg  like(string_t) const;
+  i_rplString  like(string_t) const;
+  i_string     like(string_t) const;
+  i_case       like(keyword_t) const;
+  i_wildcard   like(varChar_t) options(*nopass) const;
+  i_startPos   like(int4_t) options(*nopass) const;
+  i_endPos     like(int4_t) options(*nopass) const;
+end-pr;
+
+dcl-pr scan like(int4_t);
+  i_searchArg like(string_t) const;
+  i_string    like(string_t) const;
+  i_startPos  like(int4_t) options(*nopass) const;
+  i_wildcard  like(varChar_t) options(*nopass) const;
+end-pr;
+
+dcl-pr replace like(string_t);
+  i_rplString like(string_t) const;
+  i_string    like(string_t) const;
+  i_startPos  like(int4_t) options(*nopass) const;
+  i_length    like(int4_t) options(*nopass) const;
+  i_wildcard  like(varChar_t) options(*nopass) const;
+end-pr;
+
+dcl-pr isGeneric like(bool_t);
+  i_string like(string_t) const;
+end-pr;
+
+dcl-pr rmvMsgByIDAndType;
+  i_msgType like(msg_t.type) const;
+  i_msgID   like(msg_t.ID) const;
+end-pr;
+
+//  Create new message.
+dcl-pr newAppMsg like(msg_t);
+  i_msgID   like(msg_t.ID) options(*nopass: *omit) const;
+  i_msgData like(msg_t.data) options(*nopass: *omit) const;
+  i_msgType like(msg_t.type) options(*nopass: *omit) const;
+end-pr;
+
+//  Global Constants
+dcl-c cNumValues 10;
+dcl-c cDblQuotes '"';
+
+dcl-c cSrcFile_ind_Yes 'Y';
+dcl-c cSrcFile_ind_No 'N';
+
+dcl-c cMbr_First '*FIRST';
+dcl-c cMbr_All '*ALL';
+
+dcl-c cIgnore '*IGNORE';
+dcl-c cMatch '*MATCH';
+
+dcl-c cAppMsgF 'FNDRPLSTR';
+dcl-c cAppMsgFLib '*LIBL';
+
+//*******************************************************************
+//  Program Entry Point
+//*******************************************************************
+dcl-pi PGM_ENTRY_POINT;
+  gi_qFile      like(qObj_t) const;
+  gi_mbr        like(mbr_t) const;
+  gi_fndRplStrL likeds(fndRplStrL_t) const;
+  gi_case       like(keyword_t) const;
+  gi_wildcard   like(varChar_t) const;
+end-pi;
+//-------------------------------------------------------------------
+
+main(gi_qFile: gi_mbr: gi_fndRplStrL: gi_case: gi_wildcard);
+
+*inlr = *on;
+
+
+//==================================================================*
+//  Main Procedure
+//==================================================================*
+
+dcl-proc main;
+  dcl-pi *n;
+    i_qFile      like(gi_qFile) const;
+    i_mbr        like(gi_mbr) const;
+    i_fndRplStrL likeds(gi_fndRplStrL) const;
+    i_case       like(gi_case) const;
+    i_wildcard   like(gi_wildcard) const;
+  end-pi;
+
+  //  Local fields
+  dcl-s isMbr like(bool_t) inz(cFalse);
+  dcl-s hMbrList like(mbrLst_handle_t) inz;
+
+  dcl-s msg like(msg_t) inz;
+  dcl-ds qFile likeds(qObj_t) inz;
+  dcl-ds mbrl0200 likeds(mbrl0200_t) inz;
+  dcl-s mbrl0200_hlp like(mbrl0200) based(pMbrl0200_hlp);
+  dcl-s pMbrl0200_hlp pointer inz(%addr(mbrl0200));
+
+  //  Messages
+/copy QFNDRPLSTR,FRS0004
+  //-------------------------------------------------------------------
+
+  qFile = i_qFile;
+
+  // If the member name is *FIRST and not a generic value ...
+  // (Since special values are also treated as "generic" values
+  //  we have to exclude *FIRST from that.)
+  if   (i_mbr = cMbr_First) or (not isGeneric(i_mbr));
+    // ... then process the member
+    processMbr(qFile.name: qFile.lib:
+               i_mbr: i_fndRplStrL: i_case: i_wildcard);
+  else;
+    // ... else retrieve member list and process each member
+    clear   FRS0004;
+    msg = newAppMsg('FRS0004': FRS0004: cMsg_Status);
+    f_sndPgmMsg(msg: cMsg_Ext);
+
+    if   not f_opnMbrLst(qFile.name: qFile.lib:
+                         i_mbr: '*NAME': hMbrList: msg);
+      f_sndPgmMsg(msg: cMsg_Prv: cMsg_ToCtlBdy);
+    else;
+      isMbr = f_getFirstMbr(hMbrList: mbrl0200_hlp);
+
+      dow   isMbr;
+        processMbr(qFile.name: qFile.lib:
+                   mbrl0200.mbr: i_fndRplStrL: i_case: i_wildcard);
+        isMbr = f_getNextMbr(hMbrList: mbrl0200_hlp);
+      enddo;
+
+      f_cloMbrLst(hMbrList);
+
+    endif;
+  endif;
+
+  return;
+
+
+end-proc main;
+
+//==================================================================*
+//  Process Member
+//==================================================================*
+
+dcl-proc processMbr;
+  dcl-pi *n;
+    i_file       like(file_t) value;
+    i_lib        like(lib_t) value;
+    i_mbr        like(mbr_t) value;
+    i_fndRplStrL likeds(fndRplStrL_t) value;
+    i_case       like(keyword_t) value;
+    i_wildcard   like(varChar_t) value;
+  end-pi;
+
+  //  Local fields
+  dcl-s isError like(bool_t) inz(cFalse);
+  dcl-s isDone like(bool_t) inz(cFalse);
+  dcl-s isChanged like(bool_t) inz(cFalse);
+  dcl-s isProgressMeter like(bool_t) inz(cFalse);
+  dcl-s x like(int4_t) inz;
+  dcl-s numChanges like(int4_t) inz;
+  dcl-s sumChanges like(int4_t) inz;
+  dcl-s numRcdPrc like(int4_t) inz;
+
+  dcl-ds msg likeds(msg_t) inz;
+  dcl-ds fndRplStrL likeds(fndRplStrL_t) inz;
+  dcl-ds entry likeds(entry_t) based(pEntry);
+
+  //  Messages
+/copy QFNDRPLSTR,FRS0001
+/copy QFNDRPLSTR,FRS0002
+/copy QFNDRPLSTR,FRS0003
+/copy QFNDRPLSTR,FRS0005
+  //-------------------------------------------------------------------
+
+  fndRplStrL = i_fndRplStrL;
+
+  // Open file
+  g_file = %trim(i_lib) + '/' + %trim(i_file);
+  g_mbr  = i_mbr;
+
+  open   file;
+  rmvMsgByIDAndType(cMsg_Diag: 'CPF4011');   // Buffer length longer than record ...
+
+  // Decide whether to use the progress meter or a static message
+  if   file_FB.open_FB.numRcdAtOpn >= 10000;
+    isProgressMeter = cTrue;
+  else;
+    isProgressMeter = cFalse;
+  endif;
+
+  // If the progress meter has to be shown ...
+  if   isProgressMeter;
+    // ... then initialize progress meter
+    msg = newAppMsg('FRS0005': FRS0005: cMsg_Info);
+    p_inzProgressMeter(f_rtvMsgText(msg) + ' ' +
+                       %trimR(file_FB.open_FB.mbr) + ':'  :
+                       file_FB.open_FB.numRcdAtOpn:
+                       cPrgMtr_Blue: 1: cPrgMtr_JobType_Dlg);
+  else;
+    // ... else send static information message
+    clear   FRS0001;
+    FRS00011 = i_mbr;
+    msg = newAppMsg('FRS0001': FRS0001: cMsg_Status);
+    f_sndPgmMsg(msg: cMsg_Ext);
+  endif;
+
+  // Process file member
+  dou   isError or isDone;
+    if   file_FB.open_FB.srcFileInd = cSrcFile_ind_Yes;
+      if   file_FB.open_FB.maxRcdLength > %size(ds_srcMbr);
+        isError = cTrue;
+        leave;
+      endif;
+    else;
+      if   file_FB.open_FB.maxRcdLength > %size(ds_file);
+        isError = cTrue;
+        leave;
+      endif;
+    endif;
+
+    // Spin through (source) member
+    numRcdPrc = 0;
+
+    setll   1   file;
+    dow   %found(file);
+      if   file_FB.open_FB.srcFileInd = cSRCFILE_IND_YES;
+        read   file   ds_srcMbr;
+      else;
+        read   file   ds_file;
+      endif;
+      if   %eof(file);
+        leave;
+      endif;
+
+      // Show progress meter
+      if   isProgressMeter;
+        numRcdPrc = numRcdPrc + 1;
+        p_showProgressMeter(numRcdPrc);
+      endif;
+
+      // Spin through search & replace string list
+      isChanged = cFalse;
+      for   x = 1 to fndRplStrL.numEntries;
+        pEntry = %addr(fndRplStrL) + fndRplStrL.offsets(x);
+        if   %len(entry.find) > 0;
+          if   file_FB.open_FB.srcFileInd = cSRCFILE_IND_YES;
+            ds_srcMbr.srcDta = replaceString(
+                                      numChanges                 :
+                                      f_rmvQuotes(entry.find
+                                                  : cDblQuotes)  :
+                                      f_rmvQuotes(entry.replace
+                                                  : cDblQuotes)  :
+                                      ds_srcMbr.srcDta           :
+                                      i_case                     :
+                                      i_wildcard                 );
+          else;
+            ds_file.buffer = replaceString(
+                                      numChanges                 :
+                                      f_rmvQuotes(entry.find
+                                                  : cDblQuotes)  :
+                                      f_rmvQuotes(entry.replace
+                                                  : cDblQuotes)  :
+                                      ds_file.buffer             :
+                                      i_case                     :
+                                      i_wildcard                 );
+          endif;
+          if   numChanges > 0;
+            sumChanges = sumChanges + numChanges;
+            isChanged  = cTrue;
+          endif;
+        endif;
+      endfor;
+
+      if   isChanged;
+        if   file_FB.open_FB.srcFileInd = cSRCFILE_IND_YES;
+          update   file   ds_srcMbr;
+        else;
+          update   file   ds_file;
+        endif;
+      else;
+        unlock   file;
+      endif;
+    enddo;
+
+    isDone = cTrue;
+  enddo;
+
+  // Close file
+  if   %open(file);
+    close   file;
+  endif;
+
+  // Send completion message
+  if   sumChanges > 0;
+    clear   FRS0002;
+    FRS00021 = sumChanges;
+    FRS00022 = i_mbr;
+    FRS00023 = i_file;
+    FRS00024 = i_lib;
+    msg = newAppMsg('FRS0002': FRS0002: cMsg_Info);
+    f_sndPgmMsg(msg: cMsg_Prv: cMsg_ToCtlBdy);
+  else;
+    clear   FRS0003;
+    FRS00031 = 0;
+    FRS00032 = i_mbr;
+    FRS00033 = i_file;
+    FRS00034 = i_lib;
+    msg = newAppMsg('FRS0003': FRS0003: cMsg_Info);
+    f_sndPgmMsg(msg: cMsg_Prv: cMsg_ToCtlBdy);
+  endif;
+
+  return;
+
+
+end-proc;
+
+//=========================================================================
+//  Replaces all occurences of a search argument by
+//  a replacement string in a given string.
+//=========================================================================
+//  Parameters:
+//   i_searchArg   - The argument that is replaced by the replacement
+//                   string.
+//   i_rplString   - The replacement string that replaces the search
+//                   argument.
+//   i_string      - The string that contains the search argument.
+//   i_case        - Kind of match:  *IGNORE - Search string without
+//                                             case sensitivity.
+//                                   *MATCH  - Search for an exact match
+//                                             to the string.
+//   i_startPos    - The position where to start from.
+//   i_endPos      - Last position to find the search argument.
+//
+//  Returns:
+//   string        - The string having the search argument replaced with
+//                   the replacement string.
+//=========================================================================
+
+dcl-proc replaceString;
+  dcl-pi *n like(string_t);
+    o_numChanges like(int4_t);
+    i_searchArg  like(string_t) const;
+    i_rplString  like(string_t) const;
+    i_string     like(string_t) const;
+    i_case       like(keyword_t) const;
+    i_wildcard   like(varChar_t) options(*nopass) const;
+    i_startPos   like(int4_t) options(*nopass) const;
+    i_endPos     like(int4_t) options(*nopass) const;
+  end-pi;
+
+  //  Return value
+  dcl-s string like(string_t) inz;
+
+  //  Parameter positions
+  dcl-c p_wildcard 6;
+  dcl-c p_startPos 7;
+  dcl-c p_endPos 8;
+
+  //  Optional parameter fields
+  dcl-s startPos like(i_startPos) inz;
+  dcl-s endPos like(i_endPos) inz;
+  dcl-s wildcard like(i_wildcard) inz;
+
+  //  Local fields
+  dcl-s X like(int4_t) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  o_numChanges = 0;
+
+  if   %parms >= p_wildcard;
+    wildcard = i_wildcard;
+  else;
+    wildcard = '';
+  endif;
+
+  if   %parms >= p_startPos;
+    startPos = i_startPos;
+  else;
+    startPos = 1;
+  endif;
+
+  if   %parms >= p_endPos;
+    endPos = i_endPos;
+  else;
+    endPos = %len(i_string);
+  endif;
+
+  string = i_string;
+
+  if   i_case = cIgnore;
+    x = scan(f_lcase(i_searchArg)
+             : f_lcase(string): startPos: wildcard);
+  else;
+    x = scan(i_searchArg: string: startPos: wildcard);
+  endif;
+
+  dow   (x > 0) and (x < endPos);
+    o_numChanges = o_numChanges + 1;
+    string = replace(i_rplString
+                     : string: x: %len(i_searchArg): wildcard);
+    x = x + %len(i_rplString);
+    if   x < %len(string);
+      if   i_case = cIgnore;
+        x = scan(f_lcase(i_searchArg)
+                 : f_lcase(string): x: wildcard);
+      else;
+        x = scan(i_searchArg: string: x: wildcard);
+      endif;
+    endif;
+  enddo;
+
+  return   string;
+
+
+end-proc;
+
+//=========================================================================
+//  Returns the first position of the search argument in the source
+//  string, or 0 if it was not found.
+//=========================================================================
+//  Parameters:
+//   i_searchArg   - The argument that is replaced by the replacement
+//                   string.
+//   i_string      - The string that contains the search argument.
+//   i_startPos    - The position where to start from.
+//   i_wildcard    - The wildcard character.
+//
+//  Returns:
+//   pos           - The first position of the search argument
+//                   in the source.
+//=========================================================================
+
+dcl-proc scan;
+  dcl-pi *n like(int4_t);
+    i_searchArg like(string_t) const;
+    i_string    like(string_t) const;
+    i_startPos  like(int4_t) options(*nopass) const;
+    i_wildcard  like(varChar_t) options(*nopass) const;
+  end-pi;
+
+  //  Parameter positions
+  dcl-c p_startPos 3;
+  dcl-c p_wildcard 4;
+
+  //  Optional parameter fields
+  dcl-s startPos like(i_startPos) inz;
+  dcl-s wildcard like(i_wildcard) inz;
+
+  //  Return value
+  dcl-s pos like(int4_t) inz;
+
+  //  Local fields
+  dcl-s x like(int4_t) inz;
+  dcl-s y like(int4_t) inz;
+  dcl-s match like(int4_t) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  if (%parms() >= p_startPos);
+    startPos = i_startPos;
+  else;
+    startPos = 1;
+  endif;
+
+  if (%parms() >= p_wildcard);
+    wildcard = i_wildcard;
+  else;
+    wildcard = '';
+  endif;
+
+  if (wildcard = '');
+    pos = %scan(i_searchArg: i_string: startPos);
+    return pos;
+  endif;
+
+  match = 0;
+  for x = 1 to (%len(i_string) - %len(i_searchArg) + 1);
+    match = 0;
+    for y = 1 to %len(i_searchArg);
+      if (%subst(i_searchArg: y: 1) <> wildcard and
+          %subst(i_string: x+y-1: 1) <> %subst(i_searchArg: y: 1));
+        leave;
+      endif;
+      match = match + 1;
+      if (match = %len(i_searchArg));
+        pos = x;
+        return pos;
+      endif;
+    endfor;
+  endfor;
+
+  return pos;
+
+
+end-proc;
+
+//=========================================================================
+//  Returns the character string produced by inserting a replacement string
+//  into the source string, starting at the start position and replacing
+//  the specified number of characters.
+//=========================================================================
+//  Parameters:
+//   i_rplString   - The replacement string.
+//   i_string      - The source string.
+//   i_startPos    - The position where to start from.
+//   i_length      - The length of the string that is replaced.
+//   i_wildcard    - The wildcard character.
+//
+//  Returns:
+//   pos           - The first position of the search argument
+//                   in the source.
+//=========================================================================
+
+dcl-proc replace;
+  dcl-pi *n like(string_t);
+    i_rplString like(string_t) const;
+    i_string    like(string_t) const;
+    i_startPos  like(int4_t) options(*nopass) const;
+    i_length    like(int4_t) options(*nopass) const;
+    i_wildcard  like(varChar_t) options(*nopass) const;
+  end-pi;
+
+  //  Parameter positions
+  dcl-c p_startPos 3;
+  dcl-c p_length 4;
+  dcl-c p_wildcard 5;
+
+  //  Optional parameter fields
+  dcl-s startPos like(i_startPos) inz;
+  dcl-s length like(i_length) inz;
+  dcl-s wildcard like(i_wildcard) inz;
+
+  //  Return value
+  dcl-s newString like(string_t) inz;
+
+  //  Local fields
+  dcl-s x like(int4_t) inz;
+  dcl-s rplString like(i_rplString) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  if (%parms() >= p_startPos);
+    startPos = i_startPos;
+  else;
+    startPos = 1;
+  endif;
+
+  if (%parms() >= p_length);
+    length = i_length;
+  else;
+    length = %len(i_rplString);
+  endif;
+
+  if (%parms() >= p_wildcard);
+    wildcard = i_wildcard;
+  else;
+    wildcard = '';
+  endif;
+
+  if (wildcard = '');
+    newString = %replace(i_rplString: i_string: startPos: length);
+    return newString;
+  endif;
+
+  rplString = i_rplString;
+
+  x = 1;
+  dow (x <= %len(i_rplString));
+    if (%subst(i_rplString: x: 1) = wildcard);
+      %subst(rplString: x: 1) = %subst(i_string: startPos + x - 1: 1);
+    endif;
+    x = x + 1;
+  enddo;
+
+  newString = %replace(rplString: i_string: startPos: length);
+
+  return newString;
+
+
+end-proc;
+
+//=========================================================================
+//  Is generic?
+//=========================================================================
+
+dcl-proc isGeneric;
+  dcl-pi *n like(bool_t);
+    i_string like(string_t) const;
+  end-pi;
+
+  //  Return value
+  dcl-s isGeneric like(bool_t) inz(cFalse);
+
+  //  Local fields
+  dcl-s string like(i_string) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  string = %trim(i_string);
+
+  if   (%subst(string: 1: 1)            = '*') or
+       (%subst(string: %len(string): 1) = '*');
+    isGeneric = cTrue;
+  else;
+    isGeneric = cFalse;
+  endif;
+
+  return   isGeneric;
+
+
+end-proc;
+
+//======================================================================================
+//  Remove last message.
+//
+// Erzeugt mit PRC-Template V1.1 (Zeile bitte nicht l schen)
+//======================================================================================
+dcl-proc rmvMsgByIDAndType;
+  dcl-pi *n;
+    i_msgType like(msg_t.type) const;
+    i_msgID   like(msg_t.ID) const;
+  end-pi;
+
+  // Local helper fields
+  dcl-ds rcvm0200 likeds(rcvm0200_t) inz;
+  dcl-ds msg likeds(msg_t) inz;
+  // ---------------------------------------------------------
+
+  // empfangen letzte *ESCAPE Nachricht
+  rcvm0200 = f_rcvPgmMsg(cMsg_Diag: *omit: cMsg_Act_Same: 0:
+                         cMsg_Prv: cMsg_ToMyself: *omit: *omit: msg);
+
+  // l schen Nachrichten
+  if (msg.ID = cMSG_ID_OK);
+    if (i_msgID = rcvm0200.msgID) or (i_msgID = '');
+      p_rmvPgmMsg(cMsg_Rmv_ByKey: rcvm0200.msgKey
+                  : cMsg_Prv: cMsg_ToMyself);
+    endif;
+  endif;
+
+  return;
+
+
+end-proc;
+
+//===============================================================*
+//  Create new message.
+//===============================================================*
+dcl-proc newAppMsg;
+  dcl-pi *n like(msg_t);
+    i_msgID   like(msg_t.ID) options(*nopass: *omit) const;
+    i_msgData like(msg_t.data) options(*nopass: *omit) const;
+    i_msgType like(msg_t.type) options(*nopass: *omit) const;
+  end-pi;
+
+  //  Return value
+  dcl-ds msg likeds(msg_t) inz;
+
+  //  Parameter positions
+  dcl-c p_msgID 1;
+  dcl-c p_msgData 2;
+  dcl-c p_msgType 3;
+
+  //  Optional parameter fields
+  dcl-s msgID like(i_msgID) inz;
+  dcl-s msgData like(i_msgData) inz;
+  dcl-s msgType like(i_msgType) inz;
+
+  //  Hilfsfelder f r System-API: CEETSTA
+  dcl-s isPresent like(int4_t) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  select;
+  when (%parms() >= p_msgType);   // 3 or more parameters
+    msg = f_newMsg(i_msgID: i_msgData: i_msgType: cAppMsgF:cAppMsgFLib);
+
+  when (%parms() = p_msgData);    // 2 parameters
+    msg = f_newMsg(i_msgID: i_msgData: *omit: cAppMsgF: cAppMsgFLib);
+
+  when (%parms() = p_msgID);      // 1 parameter
+    msg = f_newMsg(i_msgID: *omit: *omit: cAppMsgF: cAppMsgFLib);
+
+  other;                          // no parameters
+    msg = f_newMsg(*omit: *omit: *omit: cAppMsgF: cAppMsgFLib);
+  endsl;
+
+  return msg;
+
+
+end-proc;
+
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3395,7 +3336,7 @@ mbrtext =  "Find and Replace Strings - Eng                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
 /* =================================================================== */
 /*                                                                     */
@@ -3420,7 +3361,7 @@ srccssid=  "00273">
 /* =================================================================== */
 /*  History:                                                           */
 /*                                                                     */
-/*  Datum       Name          Änderung                                 */
+/*  Datum       Name           nderung                                 */
 /*  ----------  ------------  ---------------------------------------  */
 /*                                                                     */
 /* =================================================================== */
@@ -3514,7 +3455,7 @@ mbrtext =  "Find and Replace Strings - Ger                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
 /* =================================================================== */
 /*                                                                     */
@@ -3539,7 +3480,7 @@ srccssid=  "00273">
 /* =================================================================== */
 /*  History:                                                           */
 /*                                                                     */
-/*  Datum       Name          Änderung                                 */
+/*  Datum       Name           nderung                                 */
 /*  ----------  ------------  ---------------------------------------  */
 /*                                                                     */
 /* =================================================================== */
@@ -3589,7 +3530,7 @@ srccssid=  "00273">
                         RSTD(*YES)             +
                         VALUES(*IGNORE         +
                                *MATCH )        +
-                        PROMPT('Übereinstimmung (Groß/Klein)')
+                        PROMPT(' bereinstimmung (Gro /Klein)')
 
              PARM       KWD(WILDCARD)          +
                         TYPE(*CHAR)            +
@@ -3633,17 +3574,19 @@ mbrtext =  "MSG: Searching member  1.                         "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0001
-      *
-      * Searching member &1.
-      *
-     D FRS0001         DS
-     D  FRS00011                    010A   INZ(*BLANKS)
-     D FRS0001#        S              8B 0 INZ(0010)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur f r Message-ID : FRS0001
+
+// Searching member &1.
+
+dcl-ds FRS0001;
+  FRS00011 char(010) inz(*blanks);
+end-ds;
+dcl-s FRS0001# bindec(8) inz(0010);
+
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3657,20 +3600,22 @@ mbrtext =  "MSG: Applied  1 changes to member  2 in file  4/ 3"
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0002
-      *
-      * Applied &1 changes to member &2 in file &4/&3.
-      *
-     D FRS0002         DS
-     D  FRS00021                    010P 0 INZ(*ZEROS )
-     D  FRS00022                    010A   INZ(*BLANKS)
-     D  FRS00023                    010A   INZ(*BLANKS)
-     D  FRS00024                    010A   INZ(*BLANKS)
-     D FRS0002#        S              8B 0 INZ(0036)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur f r Message-ID : FRS0002
+
+// Applied &1 changes to member &2 in file &4/&3.
+
+dcl-ds FRS0002;
+  FRS00021 packed(010) inz(*zeros);
+  FRS00022 char(010) inz(*blanks);
+  FRS00023 char(010) inz(*blanks);
+  FRS00024 char(010) inz(*blanks);
+end-ds;
+dcl-s FRS0002# bindec(8) inz(0036);
+
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3684,20 +3629,22 @@ mbrtext =  "MSG: No matches found in member  2 in file  4/ 3. "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0003
-      *
-      * No matches found in member &2 in file &4/&3.
-      *
-     D FRS0003         DS
-     D  FRS00031                    010P 0 INZ(*ZEROS )
-     D  FRS00032                    010A   INZ(*BLANKS)
-     D  FRS00033                    010A   INZ(*BLANKS)
-     D  FRS00034                    010A   INZ(*BLANKS)
-     D FRS0003#        S              8B 0 INZ(0036)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur f r Message-ID : FRS0003
+
+// No matches found in member &2 in file &4/&3.
+
+dcl-ds FRS0003;
+  FRS00031 packed(010) inz(*zeros);
+  FRS00032 char(010) inz(*blanks);
+  FRS00033 char(010) inz(*blanks);
+  FRS00034 char(010) inz(*blanks);
+end-ds;
+dcl-s FRS0003# bindec(8) inz(0036);
+
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3711,17 +3658,19 @@ mbrtext =  "MSG: Retrieving member list ...                   "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0004
-      *
-      * Retrieving member list ...
-      *
-     D FRS0004         DS
-      *   Keine Ersatzvariablen definiert!
-     D FRS0004#        S              8B 0 INZ(0000)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur f r Message-ID : FRS0004
+
+// Retrieving member list ...
+
+dcl-ds FRS0004;
+end-ds;
+//   Keine Ersatzvariablen definiert!
+dcl-s FRS0004# bindec(8) inz(0000);
+
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3735,17 +3684,19 @@ mbrtext =  "MSG: Searching                                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      *---------------------------------------------------------------
-      * Datenstruktur für Message-ID : FRS0005
-      *
-      * Searching
-      *
-     D FRS0005         DS
-      *   Keine Ersatzvariablen definiert!
-     D FRS0005#        S              8B 0 INZ(0000)
-      *
+**free
+//---------------------------------------------------------------
+// Datenstruktur f r Message-ID : FRS0005
+
+// Searching
+
+dcl-ds FRS0005;
+end-ds;
+//   Keine Ersatzvariablen definiert!
+dcl-s FRS0005# bindec(8) inz(0000);
+
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3759,14 +3710,14 @@ mbrtext =  "H-Specifications                                  "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-     H DEBUG
-     H OPTION(*SRCSTMT : *NODEBUGIO)
-     H DECEDIT('0,') DATEDIT(*DMY.)
-     H DATFMT(*ISO )  TIMFMT(*ISO )
-     H EXPROPTS(*RESDECPOS)
-     H EXTBININT(*YES)
+**free
+ctl-opt debug option(*srcstmt: *nodebugio);
+ctl-opt decedit('0,') datedit(*DMY.);
+ctl-opt datfmt(*iso) timfmt(*iso);
+ctl-opt expropts(*resdecpos);
+ctl-opt extbinint(*yes);
 
 ]]>  </copysrc>
 </mbr>
@@ -3781,45 +3732,42 @@ mbrtext =  "Progress Meter - Public Interface                 "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      /IF NOT DEFINED(PRGMTRR2)
-      /DEFINE PRGMTRR2
-      *
-      *  Initialize Progress Meter
-     D p_inzProgressMeter...
-     D                 PR
-     D  i_text                       20A   value
-     D  i_maxValue                   10I 0 value
-     D  i_marker                      1A   value  options(*nopass)
-     D  i_waitSec                    10I 0 value  options(*nopass)
-     D  i_jobType                    10A   value  options(*nopass)
-      *
-      *  Show Progress Meter
-     D p_showProgressMeter...
-     D                 PR
-     D  i_currValue                  10I 0 value
-      *
-      *  Job Types
-     D cPrgMtr_JobType_All...
-     D                 C                   const('*ALL')
-     D cPrgMtr_JobType_Dlg...
-     D                 C                   const('*DIALOG')
-     D cPrgMtr_JobType_Batch...
-     D                 C                   const('*BATCH')
-      *
-      *  Reverse image colours for solid progress bars.
-      *  Set i_marker to one of these for good effect.
-     D cPrgMtr_Green   C                   const(X'21')
-     D cPrgMtr_White   C                   const(X'23')
-     D cPrgMtr_Red     C                   const(X'29')
-     D cPrgMtr_Turqoise...
-     D                 C                   const(X'31')
-     D cPrgMtr_Yellow  C                   const(X'33')
-     D cPrgMtr_Pink    C                   const(X'39')
-     D cPrgMtr_Blue    C                   const(X'3B')
-      *
-      /ENDIF
+**free
+/if NOT defined(PRGMTRR2)
+/define PRGMTRR2
+
+//  Initialize Progress Meter
+dcl-pr p_inzProgressMeter;
+  i_text     char(20) value;
+  i_maxValue int(10) value;
+  i_marker   char(1) options(*nopass) value;
+  i_waitSec  int(10) options(*nopass) value;
+  i_jobType  char(10) options(*nopass) value;
+end-pr;
+
+//  Show Progress Meter
+dcl-pr p_showProgressMeter;
+  i_currValue int(10) value;
+end-pr;
+
+//  Job Types
+dcl-c cPrgMtr_JobType_All '*ALL';
+dcl-c cPrgMtr_JobType_Dlg '*DIALOG';
+dcl-c cPrgMtr_JobType_Batch '*BATCH';
+
+//  Reverse image colours for solid progress bars.
+//  Set i_marker to one of these for good effect.
+dcl-c cPrgMtr_Green X'21';
+dcl-c cPrgMtr_White X'23';
+dcl-c cPrgMtr_Red X'29';
+dcl-c cPrgMtr_Turqoise X'31';
+dcl-c cPrgMtr_Yellow X'33';
+dcl-c cPrgMtr_Pink X'39';
+dcl-c cPrgMtr_Blue X'3B';
+
+/endif
 ]]>  </copysrc>
 </mbr>
 <sendmsg  sendmsgid="CPF9897" sendmsgtype = "*STATUS   "><![CDATA[
@@ -3833,408 +3781,415 @@ mbrtext =  "Progress Meter                                    "
 srcfile =  "QFNDRPLSTR"
 srclib  =  "selected  "
 srclen  =  "00112"
-srccssid=  "00273">
+srccssid=  "01141">
 <copysrc><![CDATA[
-      ***************************************************************************************
-      * PRGMTRR1: Progress meter
-      * Copyright (C) 2001  Martin Rowe   <martin@dbg400.net>           Original  Version
-      *               2001  Th. Raddatz   <thomas.raddatz@tools400.de>  Procedure Version
-      *
-      * This program is free software; you can redistribute it and/or modify
-      * it under the terms of the GNU General Public License as published by
-      * the Free Software Foundation; either version 2 of the License, or
-      * (at your option) any later version.
-      *
-      * This program is distributed in the hope that it will be useful,
-      * but WITHOUT ANY WARRANTY; without even the implied warranty of
-      * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-      * GNU General Public License for more details.
-      *
-      * You should have received a copy of the GNU General Public License
-      * along with this program; if not, write to the Free Software
-      * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-      ***************************************************************************************
-      *   >>PRE-COMPILER<<
-      *     >>CRTCMD<<  CRTRPGMOD    MODULE(&LI/&OB) +
-      *                              SRCFILE(&SL/&SF) +
-      *                              SRCMBR(&SM);
-      *     >>COMPILE<<
-      *       >>PARM<< TRUNCNBR(*NO);
-      *       >>PARM<< DBGVIEW(*LIST);
-      *       >>PARM<< OPTION(*EVENTF);                                     *
-      *     >>END-COMPILE<<
-      *     >>EXECUTE<<
-      *   >>END-PRE-COMPILER<<
-      ***************************************************************************************
-     H nomain
-      /copy QFNDRPLSTR,H_SPEC
-      ***************************************************************************************
-      *
-      *  Global fields
-     D g_text          S             20A   inz
-     D g_maxValue      S             10I 0 inz
-     D g_marker        S              1A   inz
-     D g_waitSec       S             10I 0 inz
-      *
-     D g_jobtype       S              1A   inz
-     D g_showPrgMtr    S               N   inz
-     D g_lastPercentage...
-     D                 S              3P 0 inz
-     D g_lastTmStmp    S               Z   inz
-      *
-     D cTrue           C                   const(*on )
-     D cFalse          C                   const(*on )
-      *
-     D cSCR_MODE_DS3   C                   const('*DS3')
-     D cSCR_MODE_DS4   C                   const('*DS4')
-      *
-     D cSCR_COLUMN_DS3...
-     D                 C                   const(80)
-     D cSCR_COLUMN_DS4...
-     D                 C                   const(132)
-      *
-      *  Type definitions
-     D errCode_t       DS                  qualified   based(pDummy)
-     D  bytPrv                       10I 0
-     D  bytAvl                       10I 0
-     D  excId                         7A
-     D  res01                         1A
-     D  excData                     256A
-      *
-      *  Exported procedures
-      /COPY QFNDRPLSTR,PPRGMTRR1
-      *
-      *  Private Prototypen
-     D lf_getNumDspCol...
-     D                 PR            10U 0
-      *
-     D lf_getScreenMode...
-     D                 PR            10A
-      *
-      *===============================================================*
-      *  Initialize Progress Meter
-      *===============================================================*
-      *
-     P p_inzProgressMeter...
-     P                 B                   export
-      *
-     D p_inzProgressMeter...
-     D                 PI
-     D  i_text                       20A   value
-     D  i_maxValue                   10I 0 value
-     D  i_marker                      1A   value  options(*nopass)
-     D  i_waitSec                    10I 0 value  options(*nopass)
-     D  i_jobType                    10A   value  options(*nopass)
-      *
-      *  Optional parameter positions
-     D p_marker        C                   const(3)
-     D p_waitSec       C                   const(4)
-     D p_jobType       C                   const(5)
-      *
-      *  Optional parameter fields
-     D marker          S                   like(i_marker  ) inz
-     D waitSec         S                   like(i_waitSec ) inz
-     D jobType         S                   like(i_jobType ) inz
-      *
-      *  Local helper fields
-     D p_rcvr          S            100A   inz
-     D p_rcvrLen       S             10I 0 inz(%size(p_rcvr))
-     D p_format        S              8A   inz('JOBI0100')
-     D p_thisJob       S             26A   inz('*')
-     D p_intJob        S             16A   inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      *
-      *  Process optional parameters ...
-      *  ... i_marker
-     C                   If        %parms >= p_marker
-     C                   Eval      marker = i_marker
-     C                   Else
-     C                   Eval      marker = cPrgMtr_Blue
-     C                   Endif
-      *
-      *  ... 'i_waitSec'
-     C                   If        %parms >= p_waitSec
-     C                   Eval      waitSec = i_waitSec
-     C                   Else
-     C                   Eval      waitSec = 0
-     C                   Endif
-      *
-      *  ... 'i_jobType'
-     C                   If        %parms >= p_jobType
-     C                   Eval      jobType = i_jobType
-     C                   Else
-     C                   Eval      jobType = cPrgMtr_JobType_All
-     C                   Endif
-      *
-      * Determine job type (interactive or batch)
-     C                   Call      'QUSRJOBI'
-     C                   Parm                    p_rcvr
-     C                   Parm                    p_rcvrLen
-     C                   Parm                    p_format
-     C                   Parm                    p_thisJob
-     C                   Parm                    p_intJob
-      *
-      * Set processing attributes ...
-     C                   Eval      g_jobType = %subst(p_rcvr : 61 :1)
-      *
-     C                   Eval      g_text        = i_text
-     C                   Eval      g_maxValue    = i_maxValue
-     C                   Eval      g_waitSec     = waitSec
-      *
-     C                   Eval      g_lastPercentage = -1
-     C                   Eval      g_lastTmStmp     = *LOVAL
-      *
-      * ... if an attribute below x'20' (normal green) specified,
-      *     swap for yellow reverse (safer)
-     C                   If        marker < X'20'
-     C                   Eval      g_Marker = cPrgMtr_Yellow
-     C                   Else
-     C                   Eval      g_marker = marker
-     C                   Endif
-      *
-      * ... change marker acording to job type
-     C                   If        (g_jobType = 'B') and (g_marker < ' ')
-     C                   Eval      g_marker = '#'
-     C                   Endif
-      *
-      *  ... check whether the progress meter must be shown for jobs of type ...
-     C                   Select
-      *      ... all Jobs
-     C                   When      jobType = cPrgMtr_JobType_All
-     C                   Eval      g_showPrgMtr = cTrue
-      *      ... interactive jobs
-     C                   When      jobType = cPrgMtr_JobType_Dlg
-     C                   If        g_jobType <> 'B'
-     C                   Eval      g_showPrgMtr = cTrue
-     C                   Else
-     C                   Eval      g_showPrgMtr = cFalse
-     C                   Endif
-      *      ... batch jobs
-     C                   When      jobType = cPrgMtr_JobType_Batch
-     C                   If        g_jobType = 'B'
-     C                   Eval      g_showPrgMtr = cTrue
-     C                   Else
-     C                   Eval      g_showPrgMtr = cFalse
-     C                   Endif
-      *      ... others
-     C                   Other
-     C                   Eval      g_showPrgMtr = cFalse
-     C                   Endsl
-      *
-     C                   Return
-      *
-     P p_inzProgressMeter...
-     P                 E
-      *
-      *===============================================================*
-      *  Show Progress Meter
-      *===============================================================*
-      *
-     P p_showProgressMeter...
-     P                 B                   export
-      *
-     D p_showProgressMeter...
-     D                 PI
-     D  i_currValue                  10I 0 value
-      *
-      *  Local helper fields
-     D percentage      S              8F   inz
-     D tmStmp          S               Z   inz
-     D seconds         S             30S 0 inz
-      *
-     D progress        S            128A   inz  varying
-     D complete        S            128A   inz  varying
-     D pointer         S            128A   inz  varying
-     D fraction        S             10I 0 inz
-      *
-      *  QMHSNDPM API
-     D p_msgID         S              7A   inz('CPDA0FF')
-     D p_msgFile       DS
-     D  p_msgFile_name...
-     D                               10A   inz('QCPFMSG')
-     D  p_msgFile_lib...
-     D                               10A   inz('*LIBL')
-     D p_msgData       S            512A   inz
-     D p_dataLength    S             10I 0 inz
-     D p_msgType       S             10A   inz
-     D p_pgmQueue      S             10A   inz
-     D p_pgmStack      S             10I 0 inz
-     D p_msgKey        S              4A   inz
-     D p_error         DS
-     D p_errCode       DS                  likeds(errCode_t) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      *
-      *  Check whether the progress meter must be shown
-     C                   If        not g_showPrgMtr
-     C                   Return
-     C                   Endif
-      *
-      *  Set size of fields depending on screen size
-     C                   If        g_jobType = 'B'
-     C                   Eval      %len(progress) = 50
-     C                   Else
-     C                   Eval      %len(progress) = lf_getNumDspCol() - 30
-     C                   Endif
-     C                   Eval      %len(complete) = %len(progress)
-     C                   Eval      %len(pointer ) = %len(progress)
-      *
-      *  Compute new percentage, get current timestamp
-     C                   Eval      percentage = %int(100 * i_currValue
-     C                                                   / g_maxValue  )
-     C                   Time                    tmStmp
-      *
-      *  Compute elapsed time
-     C                   If        g_waitSec > 0
-     C     tmStmp        Subdur    g_lastTmStmp  seconds:*s
-     C                   Else
-     C                   Eval      seconds = *hival
-     C                   Endif
-      *
-      *  Check whether a new value must be shown
-     C                   If        (percentage <> g_lastPercentage)  and
-     C                             ((seconds >= g_waitSec) or (g_waitSec = 0))
-      *
-      *  ... initialize message line with dots.
-     C                   EVAL      progress = %xlate(' ': '.': progress)
-      *
-      *  ... build completion overlay for marker values of *blank and above
-     C                   If        g_marker >= x'40'
-     C                   EVAL      pointer = %xlate(' ': g_marker: pointer)
-     C                   Endif
-      *
-      *  ... as we only have enough space for a line of X, adjust the percentage to fit
-     C                   Eval      fraction = (percentage/100) * %len(progress)
-      *
-      *  ... make sure that fraction does not excedd %len(progress)
-     C                   If        fraction > %len(progress)
-     C                   Eval      fraction = %len(progress)
-     C                   Endif
-      *
-      *  ... replace the the dots in the completed section with the requested marker
-     C                   Eval      %subst(progress : 1 : fraction) =
-     C                             %subst(pointer  : 1 : fraction)
-      *
-      *  ... format the message accoring to marker type -
-      *      row of characters or solid reverse image
-     C                   If        g_marker >= x'40'
-     C                   Eval      p_msgData = g_text + ' ' +
-     C                             %editc(%dech(percentage: 3: 0):'Z') +
-     C                             '% ' + progress
-     C                   Else
-     C                   If        fraction < %len(progress)
-     C                   Eval      %subst(progress : fraction + 1 : 1) = x'22'
-     C                   Else
-     C                   Eval      progress = progress + x'22'
-     C                   Endif
-     C                   Eval      p_msgData = g_Text + ' ' +
-     C                             %editc(%dech(percentage: 3: 0):'Z') +
-     C                             '%' + g_marker + progress
-     C                   Endif
-      *
-     C                   EVAL      p_DataLength = %len(%trimL(p_msgData))
-     C                   EVAL      p_PgmStack = 0
-     C                   EVAL      p_PgmQueue = '*EXT'
-      *
-      *  Send message to this program's own queue if in batch (log in job log) ...
-     C                   If        g_jobType = 'B'
-     C                   Eval      p_msgType = '*INFO'
-     C                   Else
-      *  ... otherwise send status message for interactive request
-     C                   Eval      p_msgType = '*STATUS'
-     C                   Endif
-      *
-     C                   Clear                   p_errCode
-     C                   Eval      p_errCode.bytPrv = %size(p_errCode)
-      *
-     C                   Call (E)  'QMHSNDPM'
-     C                   Parm                    p_msgID
-     C                   Parm                    p_msgFile
-     C                   Parm                    p_msgData
-     C                   Parm                    p_dataLength
-     C                   Parm                    p_msgType
-     C                   Parm                    p_pgmQueue
-     C                   Parm                    p_pgmStack
-     C                   Parm                    p_msgKey
-     C                   Parm                    p_error
-      *
-      *  ... remember current values
-     C                   Eval      g_lastPercentage = percentage
-     C                   Eval      g_lastTmStmp     = tmStmp
-     C                   Endif
-      *
-     C                   Return
-      *
-     P p_showProgressMeter...
-     P                 E
-      *
-      *===============================================================*
-      *  Get number of display columns
-      *===============================================================*
-      *
-     P lf_getNumDspCol...
-     P                 B
-      *
-     D lf_getNumDspCol...
-     D                 PI            10U 0
-      *
-      *  Definieren Funktionswert
-     D numDspCol       S             10U 0 inz
-      *
-      *  Definieren Arbeitsfelder
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      *
-     C                   If        lf_getScreenMode() = cSCR_MODE_DS3
-     C                   Eval      numDspCol = cSCR_COLUMN_DS3
-     C                   Else
-     C                   Eval      numDspCol = cSCR_COLUMN_DS4
-     C                   Endif
-      *
-     C                   Return    numDspCol
-      *
-     P lf_getNumDspCol...
-     P                 E
-      *
-      *===============================================================*
-      *  Get screnn mode
-      *===============================================================*
-      *
-     P lf_getScreenMode...
-     P                 B
-      *
-     D lf_getScreenMode...
-     D                 PI            10A
-      *
-      *  Definieren Funktionswert
-     D screenMode      S             10A   inz
-      *
-      *  Retrieve Display Mode       Return value: Display Mode
-     D QsnRtvMod...
-     D                 PR             1A          extproc('QsnRtvMod')
-     D  o_dspMode                     1A          options(*omit   )
-     D  i_hLowLvlEnv                 10I 0 const  options(*omit   )
-     D  io_errCode                32767A          options(*omit   :
-     D                                                    *varsize)
-      *
-      *  Definieren Arbeitsfelder
-     D p_mode          S              1A                     inz
-     D p_errCode       DS                  likeds(errCode_t) inz
-      * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      *
-     C                   Clear                   p_errCode
-      *
-     C                   Callp     QsnRtvMod(p_mode: *omit: p_errCode)
-      *
-     C                   If        p_mode = '3'
-     C                   Eval      screenMode = cSCR_MODE_DS3
-     C                   Else
-     C                   Eval      screenMode = cSCR_MODE_DS4
-     C                   endif
-      *
-     C                   Return    screenMode
-      *
-     P lf_getScreenMode...
-     P                 E
-      *
+**free
+//**************************************************************************************
+// PRGMTRR1: Progress meter
+// Copyright (C) 2001  Martin Rowe   <martin@dbg400.net>           Original  Version
+//               2001  Th. Raddatz   <thomas.raddatz@tools400.de>  Procedure Version
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+//**************************************************************************************
+//   >>PRE-COMPILER<<
+//     >>CRTCMD<<  CRTRPGMOD    MODULE(&LI/&OB) +
+//                              SRCFILE(&SL/&SF) +
+//                              SRCMBR(&SM);
+//     >>COMPILE<<
+//       >>PARM<< TRUNCNBR(*NO);
+//       >>PARM<< DBGVIEW(*LIST);
+//       >>PARM<< OPTION(*EVENTF);                                     *
+//     >>END-COMPILE<<
+//     >>EXECUTE<<
+//   >>END-PRE-COMPILER<<
+//**************************************************************************************
+ctl-opt nomain;
+/copy QFNDRPLSTR,H_SPEC
+//**************************************************************************************
+
+//  Global fields
+dcl-s g_text char(20) inz;
+dcl-s g_maxValue int(10) inz;
+dcl-s g_marker char(1) inz;
+dcl-s g_waitSec int(10) inz;
+
+dcl-s g_jobtype char(1) inz;
+dcl-s g_showPrgMtr ind inz;
+dcl-s g_lastPercentage packed(3) inz;
+dcl-s g_lastTmStmp timestamp inz;
+
+dcl-c cTrue *on;
+dcl-c cFalse *on;
+
+dcl-c cSCR_MODE_DS3 '*DS3';
+dcl-c cSCR_MODE_DS4 '*DS4';
+
+dcl-c cSCR_COLUMN_DS3 80;
+dcl-c cSCR_COLUMN_DS4 132;
+
+//  Type definitions
+dcl-ds errCode_t qualified based(pDummy);
+  bytPrv  int(10);
+  bytAvl  int(10);
+  excId   char(7);
+  res01   char(1);
+  excData char(256);
+end-ds;
+
+//  Exported procedures
+/copy QFNDRPLSTR,PPRGMTRR1
+
+//  Private Prototypen
+dcl-pr lf_getNumDspCol uns(10);
+end-pr;
+
+dcl-pr lf_getScreenMode char(10);
+end-pr;
+
+//Prototype for 'QUSRJOBI'
+
+//  Retrieve Job Information (QUSRJOBI) API
+dcl-pr qusrjobi extpgm('QUSRJOBI');
+  o_rcvVar     char(65535) options(*varsize);
+  i_rcvVarLen  int(10) const;
+  i_format     char(8) const;
+  i_qJob       char(26) const;
+  i_intJobID   char(16) const;
+  io_errCode   char(65535) options(*nopass: *varsize); // OptGrp 1
+  i_resPrfStat char(1) options(*nopass) const; // OptGrp 2
+end-pr;
+
+//  Send Program Message (QMHSNDPM) API
+dcl-pr qmhsndpm extpgm('QMHSNDPM');
+  i_msgid      char(7) const;
+  i_qmsgf      char(20) const;
+  i_msgdata    char(32767) options(*varsize) const;
+  i_length     int(10) const;
+  i_msgtype    char(10) const;
+  i_callstke   char(256) const;
+  i_callstkc   int(10) const;
+  o_msgkey     char(4);
+  io_errcode   char(32767) options(*varsize);
+  i_lenstke    int(10) options(*nopass) const; // optGrp 1
+  i_callstkeq  char(20) options(*nopass) const;
+  i_wait       int(10) options(*nopass) const;
+  i_callstkedt char(10) options(*nopass) const; // optGrp 2
+  i_ccsid      int(10) options(*nopass) const;
+end-pr;
+
+//===============================================================*
+//  Initialize Progress Meter
+//===============================================================*
+
+dcl-proc p_inzProgressMeter export;
+  dcl-pi *n;
+    i_text     char(20) value;
+    i_maxValue int(10) value;
+    i_marker   char(1) options(*nopass) value;
+    i_waitSec  int(10) options(*nopass) value;
+    i_jobType  char(10) options(*nopass) value;
+  end-pi;
+
+  //  Optional parameter positions
+  dcl-c p_marker 3;
+  dcl-c p_waitSec 4;
+  dcl-c p_jobType 5;
+
+  //  Optional parameter fields
+  dcl-s marker like(i_marker) inz;
+  dcl-s waitSec like(i_waitSec) inz;
+  dcl-s jobType like(i_jobType) inz;
+
+  //  Local helper fields
+  dcl-s p_rcvr char(100) inz;
+  dcl-s p_rcvrLen int(10) inz(%size(p_rcvr));
+  dcl-s p_format char(8) inz('JOBI0100');
+  dcl-s p_thisJob char(26) inz('*');
+  dcl-s p_intJob char(16) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  //  Process optional parameters ...
+  //  ... i_marker
+  If %parms >= p_marker;
+    marker = i_marker;
+  Else;
+    marker = cPrgMtr_Blue;
+  Endif;
+
+  //  ... 'i_waitSec'
+  If %parms >= p_waitSec;
+    waitSec = i_waitSec;
+  Else;
+    waitSec = 0;
+  Endif;
+
+  //  ... 'i_jobType'
+  If %parms >= p_jobType;
+    jobType = i_jobType;
+  Else;
+    jobType = cPrgMtr_JobType_All;
+  Endif;
+
+  // Determine job type (interactive or batch)
+  QUSRJOBI ( p_rcvr : p_rcvrLen : p_format
+  : p_thisJob : p_intJob );
+
+  // Set processing attributes ...
+  g_jobType = %subst(p_rcvr : 61 :1);
+
+  g_text        = i_text;
+  g_maxValue    = i_maxValue;
+  g_waitSec     = waitSec;
+
+  g_lastPercentage = -1;
+  g_lastTmStmp     = *LOVAL;
+
+  // ... if an attribute below x'20' (normal green) specified,
+  //     swap for yellow reverse (safer)
+  If marker < X'20';
+    g_Marker = cPrgMtr_Yellow;
+  Else;
+    g_marker = marker;
+  Endif;
+
+  // ... change marker acording to job type
+  If (g_jobType = 'B') and (g_marker < ' ');
+    g_marker = '#';
+  Endif;
+
+  //  ... check whether the progress meter must be shown for jobs of type ...
+  Select;
+  //      ... all Jobs
+  When jobType = cPrgMtr_JobType_All;
+    g_showPrgMtr = cTrue;
+  //      ... interactive jobs
+  When jobType = cPrgMtr_JobType_Dlg;
+    If g_jobType <> 'B';
+      g_showPrgMtr = cTrue;
+    Else;
+      g_showPrgMtr = cFalse;
+    Endif;
+  //      ... batch jobs
+  When jobType = cPrgMtr_JobType_Batch;
+    If g_jobType = 'B';
+      g_showPrgMtr = cTrue;
+    Else;
+      g_showPrgMtr = cFalse;
+    Endif;
+  //      ... others
+  Other;
+    g_showPrgMtr = cFalse;
+  Endsl;
+
+  Return;
+
+end-proc;
+
+//===============================================================*
+//  Show Progress Meter
+//===============================================================*
+
+dcl-proc p_showProgressMeter export;
+  dcl-pi *n;
+    i_currValue int(10) value;
+  end-pi;
+
+  //  Local helper fields
+  dcl-s percentage float(8) inz;
+  dcl-s tmStmp timestamp inz;
+  dcl-s seconds zoned(30) inz;
+
+  dcl-s progress varchar(128) inz;
+  dcl-s complete varchar(128) inz;
+  dcl-s pointer varchar(128) inz;
+  dcl-s fraction int(10) inz;
+
+  //  QMHSNDPM API
+  dcl-s p_msgID char(7) inz('CPDA0FF');
+  dcl-ds p_msgFile;
+    p_msgFile_name char(10) inz('QCPFMSG');
+    p_msgFile_lib  char(10) inz('*LIBL');
+  end-ds;
+  dcl-s p_msgData char(512) inz;
+  dcl-s p_dataLength int(10) inz;
+  dcl-s p_msgType char(10) inz;
+  dcl-s p_pgmQueue char(10) inz;
+  dcl-s p_pgmStack int(10) inz;
+  dcl-s p_msgKey char(4) inz;
+  dcl-ds p_error;
+  end-ds;
+  dcl-ds p_errCode likeds(errCode_t) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  //  Check whether the progress meter must be shown
+  If not g_showPrgMtr;
+    Return;
+  Endif;
+
+  //  Set size of fields depending on screen size
+  If g_jobType = 'B';
+    %len(progress) = 50;
+  Else;
+    %len(progress) = lf_getNumDspCol() - 30;
+  Endif;
+  %len(complete) = %len(progress);
+  %len(pointer ) = %len(progress);
+
+  //  Compute new percentage, get current timestamp
+  percentage = %int(100 * i_currValue
+                       / g_maxValue  );
+  tmStmp = %timestamp();
+
+  //  Compute elapsed time
+  If g_waitSec > 0;
+    seconds = %diff(tmStmp:g_lastTmStmp:*s);
+  Else;
+    seconds = *hival;
+  Endif;
+
+  //  Check whether a new value must be shown
+  If (percentage <> g_lastPercentage)  and
+     ((seconds >= g_waitSec) or (g_waitSec = 0));
+
+    //  ... initialize message line with dots.
+    progress = %xlate(' ': '.': progress);
+
+    //  ... build completion overlay for marker values of *blank and above
+    If g_marker >= x'40';
+      pointer = %xlate(' ': g_marker: pointer);
+    Endif;
+
+    //  ... as we only have enough space for a line of X, adjust the percentage to fit
+    fraction = (percentage/100) * %len(progress);
+
+    //  ... make sure that fraction does not excedd %len(progress)
+    If fraction > %len(progress);
+      fraction = %len(progress);
+    Endif;
+
+    //  ... replace the the dots in the completed section with the requested marker
+    %subst(progress : 1 : fraction) =
+    %subst(pointer  : 1 : fraction);
+
+    //  ... format the message accoring to marker type -
+    //      row of characters or solid reverse image
+    If g_marker >= x'40';
+      p_msgData = g_text + ' ' +
+      %editc(%dech(percentage: 3: 0):'Z') +
+      '% ' + progress;
+    Else;
+      If fraction < %len(progress);
+        %subst(progress : fraction + 1 : 1) = x'22';
+      Else;
+        progress = progress + x'22';
+      Endif;
+      p_msgData = g_Text + ' ' +
+      %editc(%dech(percentage: 3: 0):'Z') +
+      '%' + g_marker + progress;
+    Endif;
+
+    p_DataLength = %len(%trimL(p_msgData));
+    p_PgmStack = 0;
+    p_PgmQueue = '*EXT';
+
+    //  Send message to this program's own queue if in batch (log in job log) ...
+    If g_jobType = 'B';
+      p_msgType = '*INFO';
+    Else;
+      //  ... otherwise send status message for interactive request
+      p_msgType = '*STATUS';
+    Endif;
+
+    Clear p_errCode;
+    p_errCode.bytPrv = %size(p_errCode);
+
+    callp(e) QMHSNDPM ( p_msgID : p_msgFile :
+    p_msgData : p_dataLength : p_msgType :
+    p_pgmQueue : p_pgmStack : p_msgKey :
+    p_error );
+
+    //  ... remember current values
+    g_lastPercentage = percentage;
+    g_lastTmStmp     = tmStmp;
+  Endif;
+
+  Return;
+
+end-proc;
+
+//===============================================================*
+//  Get number of display columns
+//===============================================================*
+
+dcl-proc lf_getNumDspCol;
+  dcl-pi *n uns(10);
+  end-pi;
+
+  //  Definieren Funktionswert
+  dcl-s numDspCol uns(10) inz;
+
+  //  Definieren Arbeitsfelder
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  If lf_getScreenMode() = cSCR_MODE_DS3;
+    numDspCol = cSCR_COLUMN_DS3;
+  Else;
+    numDspCol = cSCR_COLUMN_DS4;
+  Endif;
+
+  Return numDspCol;
+
+end-proc;
+
+//===============================================================*
+//  Get screnn mode
+//===============================================================*
+
+dcl-proc lf_getScreenMode;
+  dcl-pi *n char(10);
+  end-pi;
+
+  //  Definieren Funktionswert
+  dcl-s screenMode char(10) inz;
+
+  //  Retrieve Display Mode       Return value: Display Mode
+  dcl-pr QsnRtvMod char(1) extproc('QsnRtvMod');
+    o_dspMode    char(1) options(*omit);
+    i_hLowLvlEnv int(10) options(*omit) const;
+    io_errCode   char(32767) options(*omit: *varsize);
+  end-pr;
+
+  //  Definieren Arbeitsfelder
+  dcl-s p_mode char(1) inz;
+  dcl-ds p_errCode likeds(errCode_t) inz;
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  Clear p_errCode;
+
+  QsnRtvMod(p_mode: *omit: p_errCode);
+
+  If p_mode = '3';
+    screenMode = cSCR_MODE_DS3;
+  Else;
+    screenMode = cSCR_MODE_DS4;
+  endif;
+
+  Return screenMode;
+
+end-proc;
+
 ]]>  </copysrc>
 </mbr>
 <qcmdexc condition="*NONE" release="*CURRENT" dltsplf="A_INSTALL"><![CDATA[
@@ -4242,7 +4197,7 @@ CRTBNDCL PGM(&tolib/A_INSTALL) SRCFILE(&tolib/QFNDRPLSTR) SRCMBR(*PGM) DFTACTGRP
 BGVIEW(*LIST)
 ]]>  </qcmdexc>
 <qcmdexc condition="*NONE" release="*CURRENT" dltsplf="*NONE"><![CDATA[
-CALL PGM(&tolib/A_INSTALL) PARM('&TGTRLS' '&SRCFILE' '&tolib' '&LANG')
+CALL PGM(&tolib/A_INSTALL) PARM(('&TGTRLS') ('&SRCFILE') ('&tolib') ('&LANG'))
 ]]>  </qcmdexc>
 <qcmdexc condition="*NONE" release="*CURRENT" dltsplf="*NONE"><![CDATA[
 DLTPGM PGM(&tolib/A_INSTALL)
