@@ -6,7 +6,7 @@ FNDRPLSTR is a utility for replacing strings in source members.
 
 Dependencies:
 
-None.
+- [BASICS1](https://github.com/tools400/basics1)
 
 ## Installation
 
